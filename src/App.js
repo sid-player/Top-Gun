@@ -1,11 +1,20 @@
+
 import './App.css';
-import Header from './components/Header';
+import Header from "./Mycomponents/Header"
+import Footer from "./Mycomponents/Footer"
+import Hero from "./Mycomponents/Hero"
+import Title from "./Mycomponents/Title"
+import Pricing from "./Mycomponents/Pricing"
 
 function App() {
   return (
-    <div className="App">
-      <Header/>
-    </div>
+    <>
+     <Header/>
+     <Hero/>
+     <Title/>
+     <Pricing/>
+     <Footer/>
+    </>
   );
 }
 
