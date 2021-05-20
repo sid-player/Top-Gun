@@ -1,41 +1,14 @@
-import React from "react";
+import React, { useState } from 'react';
 
 export default function Header() {
+  const [sidebar, setSidebar] = useState(false);
 
-    var navMenuDiv = document.getElementById("nav-content");
-    var navMenu = document.getElementById("nav-toggle");
-
-    document.onclick = check;
-    function check(e) {
-      var target = (e && e.target) || (e && e.srcElement);
-
-      //Nav Menu
-      if (!checkParent(target, navMenuDiv)) {
-        // click NOT on the menu
-        if (checkParent(target, navMenu)) {
-          // click on the link
-          if (navMenuDiv.classList.contains("hidden")) {
-            navMenuDiv.classList.remove("hidden");
-          } else {
-            navMenuDiv.classList.add("hidden");
-          }
-        } else {
-          // click both outside link and outside menu, hide menu
-          navMenuDiv.classList.add("hidden");
-        }
-      }
-    }
-    function checkParent(t, elm) {
-      while (t.parentNode) {
-        if (t === elm) {
-          return true;
-        }
-        t = t.parentNode;
-      }
-      return false;
-    }
+  const showSidebar = () => setSidebar(!sidebar);
+  
+   
   
   return (
+    
     <>
     
       <nav id="header" className="fixed w-full z-30 top-0 text-white " >
@@ -65,12 +38,15 @@ export default function Header() {
               </svg>
               Landing
             </a>
-            
+
+
+
+
           </div>
           <div className="block lg:hidden pr-4">
             <button
               id="nav-toggle"
-              className="flex items-center p-1 text-pink-800 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
+              className="flex items-center p-1 text-pink-800 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out" onClick={showSidebar}
             >
               <svg
                 className="fill-current h-6 w-6"
@@ -82,15 +58,20 @@ export default function Header() {
               </svg>
             </button>
           </div>
+
+
+
+          
           <div
-            className="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20"
-            id="nav-content"
+            className="w-full flex-grow lg:flex lg:items-center lg:w-auto  mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20"
+            className={sidebar?"w-full flex-grow lg:flex lg:items-center lg:w-auto  mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20":"w-full flex-grow lg:flex lg:items-center lg:w-auto  mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20 hidden"}
+            id="nav-content" 
           >
             <ul className="list-reset lg:flex justify-end flex-1 items-center">
               <li className="mr-3">
                 <a
                   className="inline-block py-2 px-4 text-black font-bold no-underline"
-                  href="/#"
+                  href="/#" onClick={()=>{ setSidebar(!sidebar)}}
                 >
                   Active
                 </a>
@@ -98,7 +79,7 @@ export default function Header() {
               <li className="mr-3">
                 <a
                   className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
-                  href="/#"
+                  href="/#" onClick={()=>{ setSidebar(!sidebar)}}
                 >
                   Home
                 </a>
@@ -106,7 +87,7 @@ export default function Header() {
               <li className="mr-3">
                 <a
                   className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
-                  href="/#"
+                  href="/#" onClick={()=>{ setSidebar(!sidebar)}}
                 >
                   link
                 </a>
@@ -114,7 +95,7 @@ export default function Header() {
             </ul>
             <button
               id="navAction"
-              className="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-1000 ease-in-out"
+              className="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-1000 ease-in-out" onClick={()=>{ setSidebar(!sidebar)}}
             >
               Action
             </button>
