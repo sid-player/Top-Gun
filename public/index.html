@@ -24,6 +24,11 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+
+
+    <!-- splide css carousel-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+
     <title>React App</title>
   </head>
   <body>
@@ -39,5 +44,15 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
+<!-- splide js files carousel -->
+<script>
+  document.addEventListener( 'DOMContentLoaded', function () {
+    new Splide( '.splide' ).mount();
+  } );
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+
   </body>
 </html>

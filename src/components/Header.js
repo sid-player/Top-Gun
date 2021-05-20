@@ -4,6 +4,7 @@ class Header extends Component {
     render()
     {
         
+
         return(
             <div>
             <nav id="header" className="fixed w-full z-30 top-0 text-white from-blue-800 bg-gradient-to-r ">
@@ -52,6 +53,7 @@ class Header extends Component {
             <hr className="border-b border-gray-100 opacity-25 my-0 py-0" />
           </nav>
           </div>
+         
     )
 }
 }
