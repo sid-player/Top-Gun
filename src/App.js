@@ -5,17 +5,75 @@ import Footer from "./Mycomponents/Footer"
 import Hero from "./Mycomponents/Hero"
 import Title from "./Mycomponents/Title"
 import Pricing from "./Mycomponents/Pricing"
+import About from './Mycomponents/About'
+import Contact from './Mycomponents/Contact'
+import Home from './Mycomponents/Home'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 
 function App() {
-  return (
-    <>
-     <Header/>
-     <Hero/>
+  
+  
+  return <> <Router>
+     
+    <Switch>
+   
+   <Route exact path='/'render={()=>{
+     return(
+       <>
+      <Header/>
+      <Hero/>
      <Title/>
      <Pricing/>
      <Footer/>
-    </>
-  );
+       </>
+     )
+   }}>
+   </Route>
+     <Route exact path='/About' render={()=>{
+       return(
+         <>
+         <Header/>
+          <About/> 
+           </>
+       )
+     }}>  
+    
+     </Route>
+     <Route exact path='/Home' render={()=>{
+       return(
+         <>
+         <Header/>
+      <Hero/>
+     <Title/>
+     <Pricing/>
+     <Footer/>
+           </>
+       )
+     }}>  
+    
+     </Route>
+     <Route exact path='/Contact' render={()=>{
+       return(
+         <>
+         <Header/>
+          <Contact/> 
+           </>
+       )
+     }}>  
+    
+     </Route>
+    </Switch>
+  
+     
+    
+     
+     </Router>
+     
+     </>
 }
 
 export default App;

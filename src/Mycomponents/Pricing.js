@@ -8,7 +8,7 @@ export default function Pricing() {
     }
     return (
         <div style={style}>
-           <section className="bg-gray-100 py-8">
+           <section className="bg-gray-100 py-8 mt-4">
     <div className="container mx-auto px-2 pt-4 pb-12 text-gray-800">
       <h1 className="
             w-full
