@@ -1,58 +1,50 @@
 import React from "react";
 import { connect } from 'react-redux';
 import * as actions from '../store/actions/auth';
-import { Form, Input, Button , Icon , Spin} from 'antd';
+import { Form, Input, Button , Spin} from 'antd';
 
-const FormItem = Form.Item;
+const Login = (props) => {
 
-class Login extends React.Component {
-  handleSubmit = (e) => {
-    e.preventDefault();
-    this.props.form.validateFields((err, values) => {
-      if (!err) {
-        this.props.onAuth(values.userName, values.password);
-        this.props.history.push('/');
-      }
-    });
-  }
+    const onFinish = values => {
+        props.onAuth(values.userName, values.password);
+        console.log(values.userName, values.password);
+        props.history.push('/');
+        };
+        
+        let errorMessage = null;
 
-  render() {
-    let errorMessage = null;
-    if (this.props.error) {
-        errorMessage = (
-            <p>{this.props.error.message}</p>
-        );
-    }
+        const onFinishFailed = (errorInfo) => {
+            errorMessage = (
+                <p>{props.error.message}</p>
+            );
+          };
 
-    const { getFieldDecorator } = this.props.form;
 
   let style = {
     background: "linear-gradient(90deg, #d53369 0%, #daae51 100%)",
   };
 
-  return (
-      <div className="container">
+                return(
+        <div className="container">
         <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8"  style={style}>
               <div className="max-w-md w-full space-y-8 ">
                 <div>
                   <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-100">
-                    Log in to your account
+                    Login to your account
                   </h2>
                 </div>
-           {errorMessage}
+
+                    {errorMessage}
            {
-               this.props.loading ?
+               props.loading ?
 
                <Spin indicator="Waiting" />
 
                :
 
-            <Form onSubmit={this.handleSubmit} className="login-form">
+                <Form onFinish={onFinish} onFinishFailed={onFinishFailed} className="login-form">
 
-              <FormItem className="mt-8 space-y-6">
-              {getFieldDecorator('userName', {
-                        rules: [{ required: true, message: 'Please input your username!' }],
-                    })(
+                <Form.Item className="mt-8 space-y-6" rules={[{ required: true, message: 'Please input your username!' }]}>
                         <Input 
                         id="username" 
                         name="username" 
@@ -60,43 +52,37 @@ class Login extends React.Component {
                         autoComplete="email"  
                         placeholder="Username" 
                         className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm mb-2" 
-                        />
-                    )}     
-              </FormItem>
+                        />     
+                </Form.Item>
 
-              <FormItem  className="mt-8 space-y-6">
-                    {getFieldDecorator('password', {
-                        rules: [{ required: true, message: 'Please input your Password!' }],
-                    })(
+                <Form.Item  className="mt-8 space-y-6" rules = {[{ required: true, message: 'Please input your Password!' }]}>
                         <Input 
                         id="password" 
                         name="password" 
                         type="password" 
                         autoComplete="current-password" 
-                        required placeholder="Password"  
+                        required 
+                        placeholder="Password"  
                         className="appearance-none  relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm mt-2" 
                         />
-                    )}
-              </FormItem>
-              
-              <FormItem>
+                </Form.Item>
+                
+                <Form.Item>
                 <Button
-                  type="submit"
-                  className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gray-500 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300">
-                 Login
+                    type="primary"
+                    htmlType="submit"
+                    className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gray-500 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 mt-4">
+                Login
                 </Button>
-              </FormItem>
-
-            </Form>
-          }
-          </div>
+                </Form.Item>
+                 </Form>
+            }
+                  </div>
+         </div>
         </div>
-        </div>
-      );
-  }
-}
-
-const WrappedLogin = Form.create()(Login);
+                    );
+          
+};
 
 const mapStateToProps = (state) => {
     return {
@@ -111,4 +97,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(WrappedLogin);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

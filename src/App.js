@@ -7,7 +7,7 @@ import Title from "./Mycomponents/Title";
 import Pricing from "./Mycomponents/Pricing";
 import About from "./Mycomponents/About";
 import Login from "./Mycomponents/Login";
-import Signup from './Mycomponents/Signup'
+import Signup from "./Mycomponents/Signup";
 import Home from "./Mycomponents/Home";
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
