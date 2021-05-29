@@ -13,11 +13,20 @@ const Signup = (props) => {
     props.onAuth(
       values.userName,
       values.email,
-      values.password,
-      values.confirm
+      values.password1,
+      values.password2
   );
-  this.props.history.push('/');
+  console.log(values.username, values.email,values.password1,values.password2);
+  // props.history.push('/');
     };
+
+    let errorMessage = null;
+
+        const onFinishFailed = (errorInfo) => {
+            errorMessage = (
+                <p>{props.error.message}</p>
+            );
+          };
 
   return (
       <div className="container">
@@ -31,7 +40,16 @@ const Signup = (props) => {
               </h2>
             </div>
 
-          <Form onFinish={onFinish} className="register mt-8 space-y-6" >
+            {errorMessage}
+           {
+               props.loading ?
+
+               <Spin indicator="Waiting" />
+
+               :
+
+
+          <Form onFinish={onFinish} onFinishFailed={onFinishFailed} className="register mt-8 space-y-6" >
 
             <Form.Item className="mt-8 space-y-6 rounded-md shadow-sm -space-y-px" rules={[{ required: true, message: 'Please input your username!' }]}>
                         <Input 
@@ -69,16 +87,12 @@ const Signup = (props) => {
                         />
                 </Form.Item>
 
-            <Form.Item  className="mt-8 space-y-6 rounded-md shadow-sm -space-y-px" rules = {[{ required: true, message: 'Please input your Password!' },
-          ({ getFieldValue }) => ({
+            <Form.Item  className="mt-8 space-y-6 rounded-md shadow-sm -space-y-px" rules = {[{ required: true, message: 'Please input your Password!' },({ getFieldValue }) => ({
             validator(_, value) {
-              if (!value || getFieldValue('password1') === value) {
+              if (!value || getFieldValue('password') === value) {
                 return Promise.resolve();
               }
-              else
-              {
               return Promise.reject(new Error('The two passwords that you entered do not match!'));
-              }
             },
           }),
           ]}>
@@ -101,7 +115,7 @@ const Signup = (props) => {
             </Form.Item>
 
           </Form>
-             
+}
           </div>
         </div>
       </div>

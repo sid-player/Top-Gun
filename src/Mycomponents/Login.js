@@ -6,9 +6,9 @@ import { Form, Input, Button , Spin} from 'antd';
 const Login = (props) => {
 
     const onFinish = values => {
-        props.onAuth(values.userName, values.password);
-        console.log(values.userName, values.password);
-        props.history.push('/');
+        props.onAuth(values.username, values.password);
+        console.log(values.username, values.password);
+        // props.history.push('/');
         };
         
         let errorMessage = null;
@@ -42,7 +42,7 @@ const Login = (props) => {
 
                :
 
-                <Form onFinish={onFinish} onFinishFailed={onFinishFailed} className="login-form">
+                <Form onFinish={onFinish} onFinishFailed={onFinishFailed} className="login-form" >
 
                 <Form.Item className="mt-8 space-y-6" rules={[{ required: true, message: 'Please input your username!' }]}>
                         <Input 
