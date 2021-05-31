@@ -40,7 +40,7 @@ export const checkAuthTimeout = expirationTime => {
 export const authLogin = (username, password) => {
     return dispatch => {
         dispatch(authStart());
-        axios.post("http://topgun-test1.herokuapp.com/login/",{
+        axios.post("https://topgun-test1.herokuapp.com/login/",{
             username: username,
             password: password
         })
@@ -62,7 +62,7 @@ export const authLogin = (username, password) => {
 export const authSignup = (username, email, password1, password2) => {
     return dispatch => {
         dispatch(authStart());
-        axios.post("http://topgun-test1.herokuapp.com/",{
+        axios.post("https://topgun-test1.herokuapp.com/",{
             username: username,
             email: email,
             password1: password1,
