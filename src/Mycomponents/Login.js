@@ -1,9 +1,19 @@
-import React from "react";
-
-export default function Login() {
+import React, { useState } from "react";
+import { connect } from "react-redux";
+import * as actions from "../store/actions/auth";
+function Login(props) {
   let style = {
     background: "linear-gradient(90deg, #d53369 0%, #daae51 100%)",
   };
+
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  
+  const HandelForm = event => {
+    event.preventDefault();
+    props.login(username,password);
+  }
+  
   return (
     <>
       <div className="container">
@@ -19,7 +29,7 @@ export default function Login() {
                 Log in to your account
               </h2>
             </div>
-            <form className="mt-8 space-y-6" action="#" method="POST">
+            <form className="mt-8 space-y-6" onSubmit={event=>HandelForm(event)} method="POST">
               <input type="hidden" name="remember" defaultValue="true" />
               <div className="rounded-md shadow-sm -space-y-px">
                 <div>
@@ -34,6 +44,8 @@ export default function Login() {
                     required
                     className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm mb-2"
                     placeholder="Username"
+                    value={username}
+                    onChange={event=>{setUsername(event.target.value)}}
                   />
                 </div>
                 <div >
@@ -46,14 +58,13 @@ export default function Login() {
                     type="password"
                     autoComplete="current-password"
                     required
-                    className="appearance-none  relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm mt-2"
+                    className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm mt-2"
                     placeholder="Password"
+                    value={password}
+                    onChange={event=>{setPassword(event.target.value)}}
                   />
                 </div>
               </div>
-
-              
-
               <div>
                 <button
                   type="submit"
@@ -69,3 +80,11 @@ export default function Login() {
     </>
   );
 }
+
+const mapDispatchToProps = dispatch => {
+  return {
+    login: (username,password)=>dispatch(actions.authLogin(username,password))
+  }
+}
+
+export default connect(null,mapDispatchToProps)(Login)
