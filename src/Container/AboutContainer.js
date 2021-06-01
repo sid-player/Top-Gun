@@ -1,7 +1,7 @@
-import Header from "../Mycomponents/Header";
-import About from "../Mycomponents/About";
-
 import React from 'react'
+
+import Header from "../Mycomponents/LandingComponents/Header";
+import About from "../Mycomponents/LandingComponents/About";
 
 function AboutConatiner() {
     return (

@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import * as actions from "../store/actions/auth";
+import * as actions from "../../store/actions/auth";
+
+
 function Login(props) {
+
   let style = {
     background: "linear-gradient(90deg, #d53369 0%, #daae51 100%)",
   };
@@ -20,11 +23,7 @@ function Login(props) {
         <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8"  style={style}>
           <div className="max-w-md w-full space-y-8 ">
             <div>
-              <img
-                className="mx-auto h-12 w-auto"
-                src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-                alt="Workflow"
-              />
+              <img className="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Workflow" />
               <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-100">
                 Log in to your account
               </h2>
@@ -66,10 +65,7 @@ function Login(props) {
                 </div>
               </div>
               <div>
-                <button
-                  type="submit"
-                  className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gray-500 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300"
-                >
+                <button type="submit" className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gray-500 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300" >
                  Login
                 </button>
               </div>

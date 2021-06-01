@@ -1,20 +1,23 @@
-import Header from "../Mycomponents/Header";
-import Footer from "../Mycomponents/Footer";
-import Hero from "../Mycomponents/Hero";
-import Title from "../Mycomponents/Title";
-import Pricing from "../Mycomponents/Pricing";
 import React from 'react'
 
-function HomeContainer() {
+import Navbar from '../Mycomponents/HomeComponents/Navbar'
+import Header from '../Mycomponents/HomeComponents/Header'
+import Postnav from '../Mycomponents/HomeComponents/Postnav'
+import Section from '../Mycomponents/HomeComponents/Section'
+import BottomSection from '../Mycomponents/HomeComponents/BottomSection'
+import Footer from '../Mycomponents/HomeComponents/Footer'
+
+const Home = () => {
     return (
         <>
+            <Navbar />
             <Header />
-            <Hero />
-            <Title />
-            <Pricing />
+            <Postnav />
+            <Section />
+            <BottomSection />
             <Footer />
         </>
     )
 }
 
-export default HomeContainer
+export default Home

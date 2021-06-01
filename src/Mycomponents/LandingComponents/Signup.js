@@ -1,6 +1,6 @@
 import React,{ useState } from "react";
 import { connect } from "react-redux";
-import * as actions from "../store/actions/auth";
+import * as actions from "../../store/actions/auth";
 
 function Signup(props) {
   let style = {
@@ -54,7 +54,6 @@ function Signup(props) {
                     onChange={event=>setUsername(event.target.value)}
                   />
                 </div>
-
                 <div>
                
                   <label htmlFor="email" className="sr-only">

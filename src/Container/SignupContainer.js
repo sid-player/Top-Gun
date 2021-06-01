@@ -1,15 +1,29 @@
-import Header from "../Mycomponents/Header";
-import Signup from "../Mycomponents/Signup";
-
 import React from 'react'
 
-function SignupContainer() {
+import Header from "../Mycomponents/LandingComponents/Header";
+import Signup from "../Mycomponents/LandingComponents/Signup";
+import {Redirect} from "react-router-dom";
+import { connect } from "react-redux"
+import Loading from "./LoadingScreen"
+
+function SignupContainer(props) {
+
+    if(props.loggedin)
+    {
+        return <Redirect to="/Home"/>
+    }
     return (
         <>
             <Header />
-            <Signup/>
+            {props.loading ? <Loading /> : <Signup/>}
         </>
     )
 }
 
-export default SignupContainer
+const mapStateToProps = state => {
+    return {
+        loggedin: state.accessToken
+    }
+}
+
+export default connect(mapStateToProps)(SignupContainer);

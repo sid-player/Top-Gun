@@ -1,21 +1,25 @@
 import "./App.css";
 import React from 'react';
-import About from "./Container/AboutContainer";
-import Home from "./Container/HomeContainer";
-import Login from "./Container/LoginContainer";
-import Signup from "./Container/SignupContainer";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-export default function App(props) {
+import About from "./Container/AboutContainer";
+import Landing from "./Container/LandingContainer";
+import Login from "./Container/LoginContainer";
+import Signup from "./Container/SignupContainer";
+import Home from "./Container/HomeContainer"
+import Loading from "./Container/LoadingScreen"
+
+export default function App() {  
 
   return (
     <Router>
       <Switch>
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" component={Landing} />
         <Route exact path="/About" component={About} />
-        <Route exact path="/Home" container={Home} />
+        <Route exact path="/Home" component={Home} />
         <Route exact path="/Login" component={Login} />
         <Route exact path="/Signup" component={Signup} />
+        <Route exact path="/Loading" component={Loading} />
       </Switch>
     </Router>
   );

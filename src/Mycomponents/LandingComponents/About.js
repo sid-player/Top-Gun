@@ -5,7 +5,6 @@ const About = () => {
         <section>
             <h1 className='text-center mt-20 font-bold'>This is about</h1>
         </section>
-        
     )
 }
 
