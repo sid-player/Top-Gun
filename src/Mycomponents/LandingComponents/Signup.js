@@ -1,14 +1,28 @@
-import React from "react";
+import React,{ useState } from "react";
+import { connect } from "react-redux";
+import * as actions from "../../store/actions/auth";
 
-export default function Signup() {
+function Signup(props) {
   let style = {
     background: "linear-gradient(90deg, #d53369 0%, #daae51 100%)",
   };
+
+  const [username,setUsername] = useState("")
+  const [email,setEmail] = useState("")
+  const [password1,setPassword1] = useState("")
+  const [password2,setPassword2] = useState("")
+  
+  const HandleForm = event => {
+    event.preventDefault();
+    props.Signup(username,email,password1,password2);
+  } 
+  
   return (
     <>
-      <div className="container">
+      <div className="w-screen">
         <div
-          className="min-h-screen flex items-center justify-center bg-gray-50  px-4 sm:px-6 md:py-0 md:pb-60 lg:px-8 lg:pb-96  xl:py-12 w-full"
+          className="min-h-screen h-screen w-screen flex items-center justify-center bg-gray-50 px-4 sm:px-6 md:py-0 lg:px-8 xl:py-12 w-full
+          md:h-screen lg:h-screen"
           style={style}
         >
           <div className="max-w-md w-full space-y-8 ">
@@ -22,7 +36,7 @@ export default function Signup() {
                 Sign Up
               </h2>
             </div>
-            <form className="mt-8 space-y-6" action="#" method="POST">
+            <form className="mt-8 space-y-6" onSubmit={event=>{HandleForm(event)}}>
               <input type="hidden" name="remember" defaultValue="true" />
               <div className="rounded-md shadow-sm -space-y-px">
                 <div>
@@ -37,9 +51,10 @@ export default function Signup() {
                     required
                     className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm mb-2"
                     placeholder="Username"
+                    value={username}
+                    onChange={event=>setUsername(event.target.value)}
                   />
                 </div>
-
                 <div>
                
                   <label htmlFor="email" className="sr-only">
@@ -54,7 +69,8 @@ export default function Signup() {
                     required
                     className="appearance-none e relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm mb-2 "
                     placeholder="Email"
-                    
+                    value={email}
+                    onChange={event=>setEmail(event.target.value)}
                   />
                 </div>
                 <div>
@@ -70,6 +86,8 @@ export default function Signup() {
                     required
                     className="appearance-none  relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm mb-2 "
                     placeholder="Password"
+                    value={password1}
+                    onChange={event=>setPassword1(event.target.value)}
                   />
                 </div>
                 <div>
@@ -84,6 +102,8 @@ export default function Signup() {
                     required
                     className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm mb-2"
                     placeholder="Re-Enter-Password"
+                    value={password2}
+                    onChange={event=>setPassword2(event.target.value)}
                   />
                 </div>
               </div>
@@ -103,3 +123,11 @@ export default function Signup() {
     </>
   );
 }
+
+const mapDispatchToProps = dispatch => {
+  return {
+    Signup: (username,email,password1,password2)=>dispatch(actions.authSignup(username,email,password1,password2))
+  }
+}
+
+export default connect(null,mapDispatchToProps)(Signup)
