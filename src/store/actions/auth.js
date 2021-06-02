@@ -54,8 +54,8 @@ export const authLogin = (username, password) => {
             dispatch(authSuccess(accessToken,refreshToken));
             checkAuthTimeout(3600)
         })
-        .catch(error => {
-            dispatch(authFail(error))
+        .catch( error => {
+            dispatch(authFail(error.response.data.detail))
         })
     }
 }
@@ -79,7 +79,12 @@ export const authSignup = (username, email, password1, password2) => {
             checkAuthTimeout(3600)
         })
         .catch(error => {
-            dispatch(authFail(error))
+            let data = error.response.data
+            let message = "";
+            if(data.error)message=data.error
+            if(data.username)message=data.username[0]
+            if(data.email)message=data.email[0]
+            dispatch(authFail(message))
         })
     }
 }

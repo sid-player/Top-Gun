@@ -2,12 +2,12 @@ import React from 'react'
 
 function Header() {
     return (
-        <header class="w-full container mx-auto p-12">
-            <div class="flex flex-col items-center py-12">
-                <a class="font-bold text-gray-800 uppercase hover:text-gray-700 text-5xl" href="/">
+        <header className="w-full container mx-auto p-12">
+            <div className="flex flex-col items-center py-12">
+                <a className="font-bold text-gray-800 uppercase hover:text-gray-700 text-5xl" href="/">
                     Minimal Blog
             </a>
-                <p class="text-lg text-gray-600">
+                <p className="text-lg text-gray-600">
                     Lorem Ipsum Dolor Sit Amet
             </p>
             </div>

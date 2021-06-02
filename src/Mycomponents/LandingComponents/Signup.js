@@ -19,9 +19,10 @@ function Signup(props) {
   
   return (
     <>
-      <div className="container">
+      <div className="w-screen">
         <div
-          className="min-h-screen flex items-center justify-center bg-gray-50  px-4 sm:px-6 md:py-0 md:pb-60 lg:px-8 lg:pb-96  xl:py-12 w-full"
+          className="min-h-screen h-screen w-screen flex items-center justify-center bg-gray-50 px-4 sm:px-6 md:py-0 lg:px-8 xl:py-12 w-full
+          md:h-screen lg:h-screen"
           style={style}
         >
           <div className="max-w-md w-full space-y-8 ">

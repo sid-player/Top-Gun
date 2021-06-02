@@ -22,7 +22,8 @@ function SignupContainer(props) {
 
 const mapStateToProps = state => {
     return {
-        loggedin: state.accessToken
+        loggedin: state.accessToken,
+        loading: state.loading
     }
 }
 

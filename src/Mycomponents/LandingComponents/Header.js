@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
+import ErrorMessage from "./Error"
+import { connect } from "react-redux"
 
-
-export default function Header() {
+function Header(props) {
 
   const [sidebar, setSidebar] = useState(false);
   const showSidebar = () => setSidebar(!sidebar);
@@ -12,9 +13,9 @@ export default function Header() {
   };
 
   return (
-    <>
-      <nav id="header" className="fixed w-full z-30 top-0 text-white " style={style}>
-        <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
+    <div className="fixed z-30 top-0">
+      <nav id="header" className="w-screen text-white" style={style}>
+        <div className="w-screen container mx-auto flex flex-wrap items-center justify-between mt-0 py-2" >
           <div className="pl-4 flex items-center">
             <Link to="/#" className="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl" >
               <svg className="h-8 fill-current inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.005 512.005" >
@@ -32,7 +33,7 @@ export default function Header() {
               </svg>
             </button>
           </div>
-          <div id="nav-content" className={`w-full flex-grow lg:flex lg:items-center lg:w-auto  mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20 ${sidebar ? "" : "hidden" }`} >
+          <div id="nav-content" className={`mx-3 w-screen flex-grow lg:flex lg:items-center lg:w-auto  mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20 ${sidebar ? "" : "hidden" }`} >
             <ul className="list-reset lg:flex justify-end flex-1 items-center">
               <li className="font-bold mr-3">
                 <Link to="/" onClick={() => { setSidebar(!sidebar) }} className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" >
@@ -52,15 +53,24 @@ export default function Header() {
                 </Link>
               </li>
             </ul>
-            <Link to="/Signup" onClick={() => { setSidebar(!sidebar) }} className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" >
+            <Link to="/Signup" onClick={() => { setSidebar(!sidebar) }} className="mr-8 inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" >
               <button id="navAction" className="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-2 px-4 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-1000 ease-in-out" >
                 Sign-up
               </button>
             </Link>
           </div>
         </div>
-        <hr className="border-b border-gray-100 opacity-25 my-0 py-0" />
+        <hr className="opacity-30 my-0 py-0" />
       </nav>
-    </>
+      {props.error && <ErrorMessage />}
+    </div>
   );
 }
+
+const mapStateToProps = state => {
+  return {
+    error: state.error
+  }
+}
+
+export default connect(mapStateToProps)(Header);
