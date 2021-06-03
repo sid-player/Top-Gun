@@ -36,6 +36,11 @@ const authLogout = (state, action) => {
         refreshToken : null
     })
 }
+const justChange = (state, action) => {
+    let temp = {...action}
+    delete temp.type
+    return updateObject(state,temp)
+}
 
 // Combined Reducer
 const reducer = (state=initialState, action) => {
@@ -44,7 +49,7 @@ const reducer = (state=initialState, action) => {
         case actionTypes.AUTH_SUCCESS: return authSuccess(state, action);
         case actionTypes.AUTH_FAIL: return authFail(state, action);
         case actionTypes.AUTH_LOGOUT: return authLogout(state, action);
-        default: return state;
+        default: return justChange(state,action)
     }
 }
 
