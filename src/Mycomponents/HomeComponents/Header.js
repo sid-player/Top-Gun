@@ -2,7 +2,7 @@ import React from 'react'
 
 function Header() {
     return (
-        <header class="w-full container mx-auto p-12">
+        <header class="w-full mt-16 container mx-auto p-12">
             <div class="flex flex-col items-center py-12">
                 <a class="font-bold text-gray-800 uppercase hover:text-gray-700 md:text-5xl " href="/">
                     Minimal Blog
@@ -12,7 +12,6 @@ function Header() {
             </p>
             </div>
         </header>
-
     )
 }
 
