@@ -11,39 +11,39 @@ function Footer() {
           <div className="container mx-auto px-8">
             <div className="w-full flex flex-col md:flex-row py-6">
               <div className="flex-1 mb-6 text-black">
-                <a
+                <button
                   className="text-gray-400 no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
-                  href="/#"
+                 
                 >
                   TOP<span className="text-indigo-500">GUN</span>
-                </a>
+                </button>
               </div>
               <div className="flex-1 ">
                 <p className="uppercase text-white md:mb-6">Links</p>
                 <ul className="list-reset mb-6">
                   <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                    <a
-                      href="/#"
+                    <button
+                     
                       className="no-underline hover:underline text-gray-500 hover:text-pink-500"
                     >
                       FAQ
-                    </a>
+                    </button>
                   </li>
                   <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                    <a
-                      href="/#"
+                    <button
+                     
                       className="no-underline hover:underline text-gray-500 hover:text-pink-500"
                     >
                       Help
-                    </a>
+                    </button>
                   </li>
                   <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                    <a
-                      href="/#"
+                    <button
+                     
                       className="no-underline hover:underline text-gray-500 hover:text-pink-500"
                     >
                       Support
-                    </a>
+                    </button>
                   </li>
                 </ul>
               </div>
@@ -51,20 +51,20 @@ function Footer() {
                 <p className="uppercase text-white md:mb-6">Legal</p>
                 <ul className="list-reset mb-6">
                   <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                    <a
-                      href="/#"
+                    <button
+                     
                       className="no-underline hover:underline text-gray-500 hover:text-pink-500"
                     >
                       Terms
-                    </a>
+                    </button>
                   </li>
                   <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                    <a
-                      href="/#"
+                    <button
+                     
                       className="no-underline hover:underline text-gray-500 hover:text-pink-500"
                     >
                       Privacy
-                    </a>
+                    </button>
                   </li>
                 </ul>
               </div>
@@ -72,28 +72,28 @@ function Footer() {
                 <p className="uppercase text-white md:mb-6">Social</p>
                 <ul className="list-reset mb-6">
                   <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                    <a
-                      href="/#"
+                    <button
+                     
                       className="no-underline hover:underline text-gray-500 hover:text-pink-500"
                     >
                       Facebook
-                    </a>
+                    </button>
                   </li>
                   <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                    <a
-                      href="/#"
+                    <button
+                     
                       className="no-underline hover:underline text-gray-500 hover:text-pink-500"
                     >
                       Linkedin
-                    </a>
+                    </button>
                   </li>
                   <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                    <a
-                      href="/#"
+                    <button
+                     
                       className="no-underline hover:underline text-gray-500 hover:text-pink-500"
                     >
                       Twitter
-                    </a>
+                    </button>
                   </li>
                 </ul>
               </div>
@@ -101,38 +101,37 @@ function Footer() {
                 <p className="uppercase text-white md:mb-6">Company</p>
                 <ul className="list-reset mb-6">
                   <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                    <a
-                      href="/#"
+                    <button
+                     
                       className="no-underline hover:underline text-gray-500 hover:text-pink-500"
                     >
                       Official Blog
-                    </a>
+                    </button>
                   </li>
                   <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                    <a
-                      href="/#"
+                    <button
+                     
                       className="no-underline hover:underline text-gray-500 hover:text-pink-500"
                     >
                       About Us
-                    </a>
+                    </button>
                   </li>
                   <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                    <a
-                      href="/#"
+                    <button
+                     
                       className="no-underline hover:underline text-gray-500 hover:text-pink-500"
                     >
                       Contact
-                    </a>
+                    </button>
                   </li>
                 </ul>
               </div>
             </div>
           </div>
-          <a
-            href="https://www.freepik.com/free-photos-vectors/background"
+          <button
             className="text-gray-500"
           >
-          </a>
+          </button>
         </footer>
       </div>
     );

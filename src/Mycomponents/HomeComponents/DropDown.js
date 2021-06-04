@@ -11,18 +11,18 @@ const Dropdown = ({ isOpen, toggle }) => {
       }
       onClick={toggle}
     >
-      <a href='/' className='p-4 hover:bg-gray-100 cursor-pointer font-semibold'>
+      <button className='p-4 hover:bg-gray-100 cursor-pointer font-semibold'>
         Home
-      </a>
-      <a href='/' className='p-4 hover:bg-gray-100 cursor-pointer font-semibold'>
+      </button>
+      <button className='p-4 hover:bg-gray-100 cursor-pointer font-semibold'>
         Menu
-      </a>
-      <a href='/' className='p-4 hover:bg-gray-100 cursor-pointer font-semibold'>
+      </button>
+      <button className='p-4 hover:bg-gray-100 cursor-pointer font-semibold'>
         About
-      </a>
-      <a href='/' className='p-4 hover:bg-gray-100 cursor-pointer font-semibold'>
+      </button>
+      <button className='p-4 hover:bg-gray-100 cursor-pointer font-semibold'>
         Contact
-      </a>
+      </button>
     </div>
   );
 };

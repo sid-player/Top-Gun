@@ -26,18 +26,18 @@ function Section() {
                                 </p>
                             </div>
                             <div className="my-4 sm:mt-6 space-x-4">
-                                <a className="inline-block px-2 md:px-5 py-3 hover:bg-white hover:text-black hover:-translate-y-0.5 
+                                <button className="inline-block px-2 md:px-5 py-3 hover:bg-white hover:text-black hover:-translate-y-0.5 
                                 focus:ring-blue-500 focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 
                                 active:bg-blue-600 bg-blue-400 text-white uppercase tracking-wider font-semibold md:text-sm text-xs
-                                text-white shadow-lg sm:text-base" href="/">
+                                text-white shadow-lg sm:text-base">
                                     Discover passport
-                                </a>
-                                <a className="inline-block px-2 md:px-5 py-3 hover:bg-blue-400 hover:text-white hover:-translate-y-0.5 
+                                </button>
+                                <button className="inline-block px-2 md:px-5 py-3 hover:bg-blue-400 hover:text-white hover:-translate-y-0.5 
                                 focus:ring-blue-500 focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 
                                 active:bg-blue-600 bg-white text-black uppercase tracking-wider font-semibold md:text-sm shadow-lg text-xs
-                                sm:text-base border-gray" href="/">
+                                sm:text-base border-gray">
                                     Discover passport
-                                </a>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -52,10 +52,10 @@ function Section() {
                                 Highlighting the most promising startups from around the world
                             </h2>
                             <ul className=" uppercase text-white space-y-6 font-semibold text-sm md:text-md">
-                                <li><a href="/">Pittsburgh Startup Challenge</a></li>
-                                <li><a href="/">The future of robotics</a></li>
-                                <li><a href="/">Female founders seed</a></li>
-                                <li><a href="/">Spotlight on female founders</a></li>
+                                <li><button>Pittsburgh Startup Challenge</button></li>
+                                <li><button>The future of robotics</button></li>
+                                <li><button>Female founders seed</button></li>
+                                <li><button>Spotlight on female founders</button></li>
                             </ul>
                         </div>
                         <div className="md:m-24 md:p-20 md:px-10 space-y-4 mt-14">
@@ -68,9 +68,9 @@ function Section() {
                             <div>
                                 <p className="text-md text-white">
                                     A region-wide competition open to pre-seed and seed-stage entrepreneurs in any industry. Our goal is to identify and support the most exciting early-stage startups emerging across Pittsburgh
-                                    <a href="/" className="hover:text-black underline">
+                                    <button className="hover:text-black underline">
                                         Join Here.
-                                    </a>
+                                    </button>
                                 </p>
                             </div>
                         </div>
@@ -85,11 +85,11 @@ function Section() {
                               through democratizing and decentralizing access to resources and support networks so that together we build an 
                               innovation community with diversity, love, and action at its core.</p></div>
                             <div className="mt-4 sm:mt-6">
-                                <a className="inline-block px-5 py-3 hover:bg-white hover:text-black hover:-translate-y-0.5 focus:ring-blue-500 
+                                <button className="inline-block px-5 py-3 hover:bg-white hover:text-black hover:-translate-y-0.5 focus:ring-blue-500 
                                 focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-blue-600 bg-blue-400 
-                                text-white uppercase tracking-wider font-semibold text-xs md:text-sm text-white shadow-lg sm:text-base" href="/">
+                                text-white uppercase tracking-wider font-semibold text-xs md:text-sm text-white shadow-lg sm:text-base">
                                     Learn more
-                                </a>
+                                </button>
                             </div>
                         </div>
                     </div>

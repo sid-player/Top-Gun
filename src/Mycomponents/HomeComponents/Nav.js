@@ -27,9 +27,9 @@ const Nav = () => {
       className='flex fixed w-screen top-0 justify-between items-center h-16 bg-white text-black shadow-md'
       role='navigation'
     >
-      <a href='/' className='pl-8 text-3xl font-bold mx-auto'>
+      <button className='pl-8 text-3xl font-bold mx-auto'>
         TOP<span className="text-indigo-500">GUN</span>
-      </a>
+      </button>
       <div className='px-4 cursor-pointer md:hidden' onClick={toggle}>
         <svg
           className='w-8 h-8'
@@ -47,18 +47,18 @@ const Nav = () => {
         </svg>
       </div>
       <div className='pr-24 md:block hidden space-x-8 mx-auto text-xl font-semibold'>
-        <a href='/' className='p-4'>
+        <button className='p-4'>
           Home
-        </a>
-        <a href='/' className='p-4'>
+        </button>
+        <button className='p-4'>
           Menu
-        </a>
-        <a href='/' className='p-4'>
+        </button>
+        <button className='p-4'>
           About
-        </a>
-        <a href='/' className='p-4'>
+        </button>
+        <button className='p-4'>
           Contact
-        </a>
+        </button>
       </div>
     </nav>
     <DropDown isOpen={isOpen} toggle={toggle}/>
