@@ -13,7 +13,6 @@ function BookmarksContainer() {
     return (
         <>
             <Header/>
-            {/* <SearchBar/> */}
             <div className="pt-20 min-h-screen" style={style}>
                 <Search/>
                 <Format object={data}/>
