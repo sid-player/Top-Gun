@@ -15,7 +15,7 @@ function BookmarksContainer() {
             <Header/>
             <div className="pt-20 min-h-screen" style={style}>
                 <Search/>
-                <Format object={data}/>
+                <div className="mx-4"><Format object={data}/></div>
             </div>
         </>
     );
