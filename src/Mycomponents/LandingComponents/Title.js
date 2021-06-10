@@ -268,6 +268,8 @@ export default function Title() {
       </div>
     </div>
       </section>
+
+      
       <section className="bg-white border-b py-8">
         <div className="container mx-auto flex flex-wrap pt-4 pb-12">
           <h1 className="
@@ -283,6 +285,7 @@ export default function Title() {
           <div className="w-full mb-4">
             <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
           </div>
+          
           <div className="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
             <div className="
                   flex-1
@@ -339,6 +342,8 @@ export default function Title() {
               </div>
             </div>
           </div>
+
+          
           <div className="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
             <div className="
                   flex-1
