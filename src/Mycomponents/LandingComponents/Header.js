@@ -50,8 +50,7 @@ function Header(props) {
                 </Link>
               </li>
               <li className="font-bold mr-3">
-<<<<<<< Updated upstream
-=======
+
                 <Link to="/Portfolio" onClick={() => { setSidebar(!sidebar) }} className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" >
                   <button id="navAction" className="mx-auto lg:mx-0 hover:bg-white text-gray-800 font-bold rounded-md py-2 px-4 hover:shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-100 ease-in-out" >
                     Portfolio
@@ -66,7 +65,7 @@ function Header(props) {
                 </Link>
               </li>
               <li className="font-bold mr-3">
->>>>>>> Stashed changes
+
                 <Link to="/Bookmarks" onClick={() => { setSidebar(!sidebar) }} className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" >
                   <button id="navAction" className="mx-auto lg:mx-0 hover:bg-white text-gray-800 font-bold rounded-md py-2 px-4 hover:shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-100 ease-in-out" >
                     Bookmarks
