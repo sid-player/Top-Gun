@@ -3,9 +3,9 @@ import React from 'react';
 const Dropdown = ({ isOpen, toggle }) => {
   return (
     <div
-      className={`w-screen bg-gray-200 p-4
+      className={`w-screen bg-gray-200 p-4 absolute
         ${isOpen
-          ? 'grid grid-rows-4 text-center items-center'
+          ? 'grid grid-rows-4 text-center items-center top-16'
           : 'hidden'
         }`
       }
