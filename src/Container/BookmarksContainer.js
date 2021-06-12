@@ -16,6 +16,7 @@ function BookmarksContainer() {
             <div className="pt-20 min-h-screen" style={style}>
                 <Search/>
                 <div className="mx-4"><Format object={data}/></div>
+                <div style={{height : "65vh"}}></div>
             </div>
         </>
     );
