@@ -79,7 +79,7 @@ function Header(props) {
                   </button>
                 </Link>
               </li>
-              <li className="mr-3">
+              <li className="mr-3 hidden">
                 <Link to="/Signup" onClick={() => { setSidebar(!sidebar) }} className="mr-8 inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" >
                   <button id="navAction" className="mx-auto lg:mx-0 hover:bg-white text-gray-800 font-bold rounded-md py-2 px-4 hover:shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-100 ease-in-out" >
                     Sign-up

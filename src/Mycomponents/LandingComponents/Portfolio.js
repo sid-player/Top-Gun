@@ -11,7 +11,7 @@ const Portfolio = () => {
   
   return (
     <div className='mt-10 '>
-    <section className="bg-white border-b py-8 h-full" >
+    <section className="bg-white  py-8 h-full" >
         <div className="container  mx-auto flex flex-wrap pt-4 pb-12">
           <h1 className="
                 w-full
@@ -90,7 +90,7 @@ const Portfolio = () => {
             <div className="
                   flex-1
                   bg-white
-                  mb-40
+                  mb-40 md:mb-8
                   overflow-hidden
                   
                   
@@ -109,7 +109,7 @@ const Portfolio = () => {
             <div className="
                   flex-1
                   bg-white
-                  mb-40
+                  mb-40 md:mb-8
                   overflow-hidden
                   
                   
@@ -128,7 +128,7 @@ const Portfolio = () => {
             <div className="
                   flex-1
                   bg-white
-                  mb-40
+                  mb-40 md:mb-8
                   overflow-hidden
                   
                   
