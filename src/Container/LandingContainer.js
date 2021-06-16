@@ -18,8 +18,8 @@ function LandingContainer() {
             <Hero />
             <Slide left>
             <Team/>
-            <div className='md:hidden mt-96 pt-28'>
-            </div>
+            {/* <div className='md:hidden mt- pt-'>
+            </div> */}
             <Portfolio/>
             
             </Slide>

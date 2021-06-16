@@ -10,7 +10,7 @@ import logo6 from './Logo6.png'
 const Portfolio = () => {
   
   return (
-    <div className='mt-10 '>
+    <div className='mt-20 '>
     <section className="bg-white  py-8 h-full" >
         <div className="container  mx-auto flex flex-wrap pt-4 pb-12">
           <h1 className="

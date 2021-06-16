@@ -52,7 +52,7 @@ function Search()
     
     return (
     <div className="Search my-4 w-screen flex flex-col items-center">
-        <div className="shadow bg-white w-4/5 relative rounded-md flex">
+        <div className="shadow-md bg-white w-4/5 relative rounded-md flex">
             <input className="w-full rounded-full p-2" type="text" placeholder="Search..." onChange={event=> {onChangeHandler(event.target.value)}} />
             <button className="rounded-full absolute right-0 flex justify-end items-center text-black-500 p-2 hover:text-blue-400">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
