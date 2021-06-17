@@ -1,6 +1,5 @@
 import React from 'react'
-import data from '.././BookmarkData';
-import Format from "../Mycomponents/LandingComponents/Format";
+// import data from '.././BookmarkData';
 import Header from "../Mycomponents/LandingComponents/Header";
 import Search from "../Mycomponents/LandingComponents/SearchBar";
 
@@ -14,8 +13,7 @@ function BookmarksContainer() {
         <>
             <Header/>
             <div className="pt-20 min-h-screen" style={style}>
-                <Search/>
-                <div className="mx-4"><Format object={data}/></div>
+                <Search />
                 <div style={{height : "65vh"}}></div>
             </div>
         </>
