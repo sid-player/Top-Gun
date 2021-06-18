@@ -5,14 +5,12 @@ import Search from "../Mycomponents/LandingComponents/SearchBar";
 
 function BookmarksContainer() {
 
-    let style = {
-        background: "linear-gradient(90deg, #d53369 0%, #daae51 100%)",
-    };
+   
     
     return (
         <>
             <Header/>
-            <div className="pt-20 min-h-screen" style={style}>
+            <div className="pt-20 min-h-screen bg-gray-100">
                 <Search />
                 <div style={{height : "65vh"}}></div>
             </div>
