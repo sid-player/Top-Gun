@@ -3,34 +3,32 @@ import logo from "./hero.png";
 
 export default function Hero() {
   
-  let style={
-    background: "linear-gradient(90deg, #d53369 0%, #daae51 100%)"
-  }
+  
   
   return (
-    <div style={style}>
-      <div className="pt-24">
-        <div className=" container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center" >
-          <div className=" flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left ">
-            <p className="uppercase tracking-loose text-white w-full">
-              What business are you?
+    <div className="bg-gray-50 overflow-hidden">
+      <div className="pt-24 overflow-hidden">
+        <div className=" container px-10  flex flex-wrap flex-col md:flex-row items-center bg-gray-100 mx-10" >
+          <div className=" flex flex-col w-full md:w-1/2 justify-center items-start text-center md:text-left ">
+            <p className="uppercase tracking-loose text-gray-700 w-full">
+            Hi budding entrepreneurs!
             </p>
-            <h1 className="my-4 text-5xl font-bold leading-tight text-white">
-              Main Hero Message to sell yourself!
+            <h1 className="my-4 text-5xl font-thin leading-tight text-gray-700">
+            Are you still trying to figure out the right tactics to grow your startup? 
             </h1>
-            <p className="leading-normal text-2xl mb-8 text-white">
-              Sub-hero message, not too long and not too short. Make it just right!
+            <p className="leading-normal   text-2xl mb-8 text-gray-700">
+            If yes, then you are at the right place.
             </p>
             <button className="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out ">
               Subscribe
             </button>
           </div>
-          <div className="w-full md:w-3/5 py-6 text-center">
+          <div className="w-full md:w-1/2 py-6 text-center">
             <img className="w-full md:w-4/5 z-50" src={logo} alt="img"/>
           </div>
         </div>
       </div>
-      <div className="relative -mt-12 lg:-mt-24">
+      {/* <div className="relative -mt-12 lg:-mt-24">
         <svg viewBox="0 0 1428 174" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" >
           <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
             <g transform="translate(-2.000000, 44.000000)" fill="#FFFFFF" fillRule="nonzero" >
@@ -43,7 +41,7 @@ export default function Hero() {
             </g>
           </g>
         </svg>
-      </div>
+      </div> */}
     </div>
   );
 }

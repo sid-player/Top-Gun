@@ -3,15 +3,13 @@ import Signup from '../../Container/SignupContainer'
 
 export default function Pricing() {
   
-  let style={
-      background: "linear-gradient(90deg, #d53369 0%, #daae51 100%)"
-  }
+  
 
   return (
     <div>
-     <div style={style}>
+     <div>
       
-      <svg className="wave-top" viewBox="0 0 1439 147" version="1.1" xmlns="http://www.w3.org/2000/svg"
+      {/* <svg className="wave-top" viewBox="0 0 1439 147" version="1.1" xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink">
         <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
           <g transform="translate(-1.000000, -14.000000)" fillRule="nonzero">
@@ -35,7 +33,7 @@ export default function Pricing() {
             </g>
           </g>
         </g>
-      </svg>
+      </svg> */}
       <Signup/>
       {/* <section className="container mx-auto text-center py-6 mb-12">
         

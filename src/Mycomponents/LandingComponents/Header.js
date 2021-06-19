@@ -27,7 +27,7 @@ function Header(props) {
           </div>
 
           <div className="block lg:hidden pr-4">
-            <button id="nav-toggle" className="flex items-center bg-gray-800 p-1 text-pink-800 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out" onClick={showSidebar} >
+            <button id="nav-toggle" className="flex items-center bg-gray-800 p-1 text-gray-100 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out" onClick={showSidebar} >
               <svg className="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" >
                 <title>Menu</title>
                 <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
@@ -76,7 +76,7 @@ function Header(props) {
               </li>
               <li className="mr-3">
                 <Link to="/Login" onClick={() => { setSidebar(!sidebar) }} className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" >
-                <button id="navAction" className="lg:mx-0  text-gray-200 hover:text-gray-400  font-thin rounded-md py-2 px-4  opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-75  ease-in-out  text-lg " >
+                <button id="navAction" className="lg:mx-0  text-gray-100 hover:text-gray-400  font-thin rounded-md py-2 px-4  opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-75  ease-in-out  text-lg   bg-gray-700" >
                     LOG-IN
                   </button>
                 </Link>
