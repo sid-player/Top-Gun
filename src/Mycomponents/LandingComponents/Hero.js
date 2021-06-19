@@ -6,9 +6,9 @@ export default function Hero() {
   
   
   return (
-    <div className="bg-gray-50 overflow-hidden">
-      <div className="pt-24 overflow-hidden">
-        <div className=" container px-10  flex flex-wrap flex-col md:flex-row items-center bg-gray-100 mx-10" >
+    <div className="bg-gray-100">
+      <div className="pt-24 ">
+        <div className=" container   flex flex-wrap flex-col md:flex-row items-center bg-gray-100  p-6" >
           <div className=" flex flex-col w-full md:w-1/2 justify-center items-start text-center md:text-left ">
             <p className="uppercase tracking-loose text-gray-700 w-full">
             Hi budding entrepreneurs!
