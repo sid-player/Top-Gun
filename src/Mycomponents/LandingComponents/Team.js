@@ -9,41 +9,41 @@ const Team = () => {
     // };
 
     return (
-        <section className="items-center justify-center w-screen mt-20">
-            <div className="container flex justify-center mx-auto pt-12">
+        <section className="items-center justify-center w-screen mt-20 bg-gray-50">
+            <div className="container flex justify-center mx-auto pt-4">
                 <div>
-                    <p className="text-gray-500 text-lg text-center font-normal pb-3">
+                    <p className="text-gray-500 text-xl text-center font-normal ">
                         BUILDING TEAM
                     </p>
-                    <h1 className="xl:text-4xl text-3xl text-center text-gray-800  pb-6 sm:w-4/6 w-5/6 mx-auto">The Talented People Behind the Scenes of the Organization</h1>
+                    <h1 className="xl:text-3xl text-2xl mt-2 text-center text-gray-900  pb-6 sm:w-4/6 w-5/6 mx-auto">The Talented People Behind the Scenes of the Organization</h1>
                 </div>
             </div>
 
-            <div className="w-full px-10 ">
+            <div className="w-screen md:w-2/3 px-10 py-8 md:mx-auto bg-gray-100 shadow-sm">
                 <div className="container mx-auto">
                     <div className="lg:flex md:flex xl:justify-between flex-wrap md:justify-around sm:justify-around lg:justify-around pt-4">
                         <div className="xl:w-1/3 sm:w-1/2 mx-auto sm:max-w-xs mb-20 xl:max-w-sm lg:w-1/2 relative">
-                            <div className="bg-top bg-cover bg-no-repeat h-68 w-68">
-                                <img src={DV} alt="img" className="h-96 w-68 overflow-hidden object-cover rounded shadow" />
-                            </div>
-                            <div className="py-5 bg-white flex flex-col justify-center w-11/12 mx-auto absolute rounded shadow -mt-8 right-0 left-0 opacity-70 mb-0 ">
-                                <p className="text-xl text-center text-gray-800 font-medium mb-1">
+                           
+                                <img src={DV} alt="img" className="h-80 w-64 overflow-hidden mx-auto object-cover rounded shadow" />
+                            
+                            <div className=" bg-white flex flex-col justify-center md:w-60 md:h-28 mx-auto absolute rounded shadow -mt-8 right-0 left-0 ">
+                                <p className="text-lg md:text-xl text-center text-gray-800 font-medium mb-1">
                                     Dharamveer Singh Chouhan
                                 </p>
-                                <p className="text-center text-base font-mediium text-gray-600">
+                                <p className="text-center text-base font-medium text-gray-600">
                                     CEO, Zostel
                                 </p>
                             </div>
                         </div>
-                        <div className="xl:w-1/3 sm:w-1/2 mx-auto sm:max-w-xs xl:max-w-sm lg:w-1/2 relative mb-96 md:mb-20">
-                            <div className="bg-top bg-cover bg-no-repeat h-68 w-68">
-                                <img src={PC} alt="img" className="h-full w-full overflow-hidden object-cover rounded shadow" />
-                            </div>
-                            <div className="py-5 bg-white flex flex-col justify-center w-11/12 mx-auto absolute rounded shadow -mt-8 right-0 left-0">
-                                <p className="text-xl text-center text-gray-800 font-normal mb-1">
+                        <div className="xl:w-1/3 sm:w-1/2 mx-auto sm:max-w-xs mb-20 xl:max-w-sm lg:w-1/2 relative">
+                            
+                                <img src={PC} alt="img" className="h-80 w-64 overflow-hidden mx-auto object-cover rounded shadow" />
+                           
+                            <div className=" bg-white flex flex-col justify-center md:w-60 md:h-28 mx-auto absolute rounded shadow -mt-8 right-0 left-0">
+                                <p className="text-lg md:text-xl text-center text-gray-800 font-medium mb-1">
                                     Parth Choudhary
                                 </p>
-                                <p className="text-center text-base text-gray-600">
+                                <p className="text-center text-base font-medium text-gray-600">
                                     CEO, ggTV Inc
                                 </p>
                             </div>

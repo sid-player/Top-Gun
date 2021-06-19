@@ -11,7 +11,7 @@ const Portfolio = () => {
   
   return (
     <div className='mt-20 '>
-    <section className="bg-white  py-8 h-full" >
+    <section className="bg-gray-50  py-8 h-full" >
         <div className="container  mx-auto flex flex-wrap pt-4 pb-12">
           <h1 className="
                 w-full
