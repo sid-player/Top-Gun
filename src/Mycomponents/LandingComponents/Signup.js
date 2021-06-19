@@ -24,7 +24,7 @@ function Signup(props) {
          
         >
           <div className=" w-full max-w-xl space-y-4 bg-gray-50 shadow-lg   p-8 md:px-16
-           md:pb-16 md:pt-8 -mt-16 rounded-b-md">
+           md:pb-16 md:pt-8 -mt-4 rounded-b-md">
             <div>
               <img
                 className="mx-auto h-8 w-auto"
