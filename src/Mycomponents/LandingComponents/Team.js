@@ -9,7 +9,7 @@ const Team = () => {
     // };
 
     return (
-        <section className="items-center justify-center w-screen mt-20 bg-gray-50">
+        <section className="items-center justify-center w-screen pt-20 bg-gray-50">
             <div className="container flex justify-center mx-auto pt-4">
                 <div>
                     <p className="text-gray-500 text-xl text-center font-normal ">
