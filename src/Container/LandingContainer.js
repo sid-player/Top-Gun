@@ -14,6 +14,7 @@ import Slide from 'react-reveal/Slide';
 function LandingContainer() {
     return (
         <>  
+            <div className="overflow-hidden">
             <Header />
             <Hero />
             <Slide left>
@@ -28,6 +29,8 @@ function LandingContainer() {
             {/*
             <Title />
             <Footer /> */}
+            </div>
+            
         </>
     )
 }
