@@ -8,9 +8,6 @@ function Header(props) {
   const [sidebar, setSidebar] = useState(false);
   const showSidebar = () => setSidebar(!sidebar);
 
-  let style = {
-    background: "linear-gradient(90deg, #d53369 0%, #daae51 100%)",
-  };
 
   return (
     <div className="fixed z-30 top-0">
