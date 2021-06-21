@@ -1,15 +1,14 @@
-import React from 'react'
+import React from "react";
 import Header from "../Mycomponents/LandingComponents/Header";
-import Team from '../Mycomponents/LandingComponents/Team'
+import Team from "../Mycomponents/LandingComponents/Team";
 
 const PortfolioContainer = () => {
-    return (
-        <div>
-          <Header/>
-          <Team/> 
-        </div>
-    )
-}
+  return (
+    <div>
+      <Header />
+      <Team />
+    </div>
+  );
+};
 
-export default PortfolioContainer
-
+export default PortfolioContainer;
