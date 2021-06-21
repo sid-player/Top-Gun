@@ -44,10 +44,10 @@ const Team = () => {
 
               <div className=" bg-white flex flex-col justify-center md:w-60 md:h-28 mx-auto absolute rounded shadow -mt-8 right-0 left-0 p-2">
                 <p className="text-lg md:text-xl text-center text-gray-800 font-medium mb-1">
-                  Parth Choudhary
+                  Karann Dembla
                 </p>
                 <p className="text-center text-base font-medium text-gray-600">
-                  CEO, ggTV Inc
+                  Founder and CEO Zolo Pocker
                 </p>
               </div>
             </div>
