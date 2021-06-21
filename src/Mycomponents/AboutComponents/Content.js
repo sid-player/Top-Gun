@@ -1,5 +1,5 @@
 import React from 'react'
-import AboutBg from './img/p5.jpg'
+
 
 function Content() {
     return (
