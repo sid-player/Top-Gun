@@ -3,14 +3,12 @@ import AboutBg from './img/p5.jpg'
 
 function Content() {
     return (
-        <div className="m-6 mt-20  p-4 flex flex-col items-center lg:m-24 lg:p-10 bg-cover bg-center mb-10" style={{ backgroundImage: `url(${AboutBg})` }}>
-            <h1 className="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
+        <div className="mt-12 md:mt-24 flex flex-col items-center  h-screen bg-white">
+            <h1 className="w-full mt-10 text-3xl md:text-5xl font-bold leading-tight text-center text-gray-800">
                 About Us
             </h1>
-            <div className="w-full mb-4">
-                <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t" />
-            </div>
-            <div className="bg-white hover:grow shadow-xl my-10 md:my-14 mx-3 lg:mx-auto w-full md:w-4/5 lg:w-3/4 text-xl text-black font-semibold text-center rounded-xl px-8 py-6">
+            <div className="bg-white hover:grow shadow-xl my-6 md:my-8 mx-3 lg:mx-auto w-full md:w-4/5 lg:w-3/5 text-md md:text-xl
+             text-black font-semibold text-left rounded-md px-8 py-6">
                 <p>
                     TopGun.VC builds entrepreneur’s faith in their vision and nurtures them with direction for the long war ahead.
                 </p>
