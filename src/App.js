@@ -1,5 +1,5 @@
 import "./App.css";
-import React from 'react';
+import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import About from "./Container/AboutContainer";
@@ -10,12 +10,10 @@ import Home from "./Container/HomeContainer";
 import Loading from "./Container/LoadingScreen";
 import Bookmark from "./Container/BookmarksContainer";
 
-import Portfolio from "./Container/PortfolioContainer"
-import Team from "./Container/TeamContainer"
+import Portfolio from "./Container/PortfolioContainer";
+import Team from "./Container/TeamContainer";
 
-
-export default function App() {  
-
+export default function App() {
   return (
     <Router>
       <Switch>
@@ -25,12 +23,9 @@ export default function App() {
         <Route exact path="/Login" component={Login} />
         <Route exact path="/Signup" component={Signup} />
         <Route exact path="/Loading" component={Loading} />
-        <Route exact path="/Bookmarks" component={Bookmark}/>
-
-        <Route exact path="/Portfolio" component={Portfolio}/>
-        <Route exact path="/Team" component={Team}/>
-
-
+        <Route exact path="/Bookmarks" component={Bookmark} />
+        <Route exact path="/Portfolio" component={Portfolio} />
+        <Route exact path="/Team" component={Team} />
       </Switch>
     </Router>
   );
