@@ -17,7 +17,7 @@ function Search() {
             className=" mt-3  justify-center text-sm md:text-l text-gray-700"
           >
             <div
-              className=" mt-4 justify-center overflow-hidden shadow transform hover:scale-105 hover:mb-2 hover:bg-gray-100  bg-gray-50   break-words   border-b-2 rounded p-4 md:p-8 my-1 font-medium  "
+              className="mt-4 justify-center overflow-hidden  transition transform hover:scale-105 hover:mb-2 hover:bg-gray-50 hover:shadow-md bg-gray-50 break-words border-b-2 border-gray-300 rounded p-4 md:p-8 my-1 font-medium"
               key={object.id}
             >
               {/* for dummy image */}
@@ -25,7 +25,7 @@ function Search() {
                 <img
                   src={object.image}
                   alt=""
-                  className="w-full h-40 object-contain  justify-center"
+                  className="w-full h-40 object-contain justify-center"
                 />
               ) : (
                 <img
@@ -36,7 +36,7 @@ function Search() {
                 />
               )}
 
-              <div className=" truncate">{object.name}</div>
+              <div className="truncate">{object.name}</div>
             </div>
           </a>
         </div>
