@@ -28,7 +28,7 @@ function Signup(props) {
             <div>
               <img
                 className="mx-auto h-8 w-auto"
-                src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                src="https://www.act.org/content/dam/act/unsecured/Images/2020/icon-medium-blue-register.png"
                 alt="Workflow"
               />
               <h2 className="mt-6 text-center text-2xl  font-medium text-gray-700">
@@ -121,7 +121,7 @@ function Signup(props) {
               <div>
                 <button
                   type="submit"
-                  className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm  font-medium  rounded-md text-gray-100 bg-gray-500 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300  mt-8"
+                  className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm  font-medium  rounded-md text-gray-100 bg-blue-500 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300  mt-8"
                 >
                   SIGN UP
                 </button>

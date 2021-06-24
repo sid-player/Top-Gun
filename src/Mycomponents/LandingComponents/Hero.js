@@ -16,7 +16,7 @@ export default function Hero() {
             <h1 className="text-xl sm:text-3xl mb-8 text-gray-700 font-thin self-center md:self-start">
               Then you are at the right place.
             </h1>
-            <button className="mx-auto lg:mx-0 hover:bg-gray-500 hover:text-white bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out self-center sm:self-start">
+            <button className="mx-auto lg:mx-0 hover:bg-gray-500 hover:text-white bg-blue-500 text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out self-center sm:self-start">
               Signup Now!
             </button>
           </div>
