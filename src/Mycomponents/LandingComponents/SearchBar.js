@@ -1,6 +1,6 @@
 import data from "../../BookmarkData";
 import {useState, useEffect} from "react";
-import SearchIcon from '@material-ui/icons/Search';
+// import SearchIcon from '@material-ui/icons/Search';
 
 function Search()
 {
@@ -73,8 +73,8 @@ function Search()
     <div className="Search my-4 w-screen flex flex-col items-center justify-center">
 
         <div className=" border-2 border-gray-200 shadow-md w-4/5 md:w-2/3 relative  bg-gray-100 rounded-lg flex">
-        {/* <SearchIcon /> */}
-        <input className="w-full rounded-full bg-gray-100 p-4  h-16 placeholder-gray-900" type="text" placeholder="Search Anything..." onChange={e=>onChangeHandler(e.target.value)}/>
+        {/* <SearchIcon> */}
+            <input className="w-full rounded-full bg-gray-100 p-4  h-16 placeholder-gray-900" type="text" placeholder="Search Anything..." onChange={e=>onChangeHandler(e.target.value)}/>
              
         </div>
 
