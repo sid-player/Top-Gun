@@ -17,7 +17,8 @@ function Search() {
             className=" mt-3  justify-center text-sm md:text-l text-gray-700"
           >
             <div
-              className="mt-4 justify-center overflow-hidden  transition transform hover:scale-105 hover:mb-2 hover:bg-gray-50 hover:shadow-md bg-gray-50 break-words border-b-2 border-gray-300 rounded p-4 md:p-8 my-1 font-medium"
+              className="mt-4 justify-center overflow-hidden  transition transform hover:scale-105 hover:mb-2 
+              hover:bg-gray-50 hover:shadow-md bg-gray-50 break-words border-b-2 border-gray-300 rounded p-4 md:p-8 my-1 font-medium"
               key={object.id}
             >
               {/* for dummy image */}
@@ -81,7 +82,7 @@ function Search() {
 
   return (
     // search bar
-    <div className="Search my-4 w-screen flex flex-col items-center justify-center">
+    <div className="Search my-4 flex flex-col items-center justify-center">
       <div className="border-1 border-gray-100 shadow w-4/5 md:w-2/3 relative flex my-2">
         <span className="flex items-center justify-center bg-white pl-4 z-20">
           <img src={searchIcon} alt="search icon" style={{ height: "2vh" }} />
@@ -96,7 +97,7 @@ function Search() {
 
       {/* content */}
 
-      <div className="relative mt-0  overflow-hidden grid gap-6 sm:grid-cols-1 w-1/2 h-1/2  md:w-2/3 grid-cols-3 lg:grid-cols-4">
+      <div className="relative mt-0  overflow-hidden grid gap-6 sm:grid-cols-1 w-3/4 h-1/2  md:w-2/3 grid-cols-2 lg:grid-cols-4">
         {listToDisplay}
       </div>
     </div>
