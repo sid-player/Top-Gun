@@ -3,9 +3,9 @@ import React from 'react'
 function LoadingScreen() {
 
     let style = {
-        background: "linear-gradient(90deg, #d53369 0%, #daae51 100%)",
+        background: "#B1B0AE",
     };
-
+    // linear-gradient(90deg, #d53369 0%, #daae51 100%)
     const loading = {
         borderWidth: "2px",
         borderRightColor: "transparent",
@@ -21,4 +21,4 @@ function LoadingScreen() {
     )
 }
 
-export default LoadingScreen
+export default LoadingScreen;
