@@ -4,6 +4,8 @@ import {useState, useEffect} from "react";
 
 function Search()
 {
+    const [loading, setloading]= useState(false);
+    const [Search, setSearch]= useState("");
     const [SearchResults, setSearchResults] = useState(data)
     const [listToDisplay, setListToDisplay] = useState(null)
 
@@ -37,9 +39,18 @@ function Search()
         </div>
         ))
     }, [SearchResults])
+
+ 
+    function exactSearch(event){
+        const searchItem= event.target.value;
+        setSearch(searchItem);
+    }
     
-    function onChangeHandler(value)
+    
+
+    function onChangeHandler()
     {
+        const value= Search;
         if(value===""){
             setSearchResults(data);
             return;
@@ -72,10 +83,10 @@ function Search()
         // search bar
     <div className="Search my-4 w-screen flex flex-col items-center justify-center">
 
-        <div className=" border-2 border-gray-200 shadow-md w-4/5 md:w-2/3 relative  bg-gray-100 rounded-lg flex">
+        <div className=" border-2 border-gray-200 shadow-md w-2/5 md:w-2/3 relative  bg-gray-100 rounded-lg flex">
         {/* <SearchIcon> */}
-            <input className="w-full rounded-full bg-gray-100 p-4  h-16 placeholder-gray-900" type="text" placeholder="Search Anything..." onChange={e=>onChangeHandler(e.target.value)}/>
-             
+            <input className="w-full rounded-full bg-gray-100 p-4  h-16 placeholder-gray-900" type="text" placeholder="Search Anything..." onChange={exactSearch} value={Search} />
+             <button onClick= {onChangeHandler} className= "ml-4 rounded-lg " > Search </button>
         </div>
 
         
