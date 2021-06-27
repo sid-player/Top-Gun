@@ -1,17 +1,60 @@
-import React, { useState } from "react";
-import { connect } from "react-redux";
-import * as actions from "../../store/actions/auth";
+import React, { useState , useContext} from "react";
+import {DataContext} from "../../ContextApi"
+import axios from "axios";
 
 
-function Login(props) {
 
-
+function Login() {
+ 
+  const [parameters,setparameters]= useContext(DataContext);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
+
   
   const HandelForm = event => {
     event.preventDefault();
-    props.login(username,password);
+
+    axios.post("https://topgun-test1.herokuapp.com/login/",{
+            username: username,
+            password: password
+        })
+        .then(res => {
+            const accessToken = res.data.access;
+            const refreshToken = res.data.refresh;
+            
+            localStorage.setItem("accessToken",accessToken);
+            localStorage.setItem("refreshToken",refreshToken);
+            setparameters([
+           
+              {
+                   accessToken : accessToken,
+                   refreshToken : refreshToken,
+                   error : null,
+                   loading : false
+               }
+           
+          
+          ])
+           
+        })
+        .catch( error => {
+          let data = error.response.data.detail
+          setparameters([
+           
+            {
+                 accessToken : null,
+                 refreshToken : null,
+                 error : data,
+                 loading : false
+             }
+         
+        
+        ])
+      })
+       
+
+    
   }
   
   return (
@@ -71,7 +114,8 @@ function Login(props) {
               </div>
               <div>
                 <button type="submit" className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-500 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300" >
-                 Login
+                  <h1>{parameters[0].accessToken}</h1>
+                  Login
                 </button>
               </div>
             </form>
@@ -82,10 +126,5 @@ function Login(props) {
   );
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    login: (username,password)=>dispatch(actions.authLogin(username,password))
-  }
-}
 
-export default connect(null,mapDispatchToProps)(Login)
+export default Login

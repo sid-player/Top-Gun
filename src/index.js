@@ -4,22 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import reducer from './store/reducers/auth';
-import { createStore, compose, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
-import { Provider } from 'react-redux';
 
-const composeEnhances = window.__REDUX_DEVTOOLS_EXTENSIONS_COMPOSE__ || compose;
-
-const store = createStore(reducer, composeEnhances(
-  applyMiddleware(thunk)
-))
 
 const app = (
   <React.StrictMode>
-    <Provider store = {store}>
+  
       <App />
-    </Provider>
+   
   </React.StrictMode>
 )
 

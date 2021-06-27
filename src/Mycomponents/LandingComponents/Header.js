@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import { Link } from "react-router-dom";
 import ErrorMessage from "./Error";
-import { connect } from "react-redux";
+import {DataContext} from "../../ContextApi"
 
-function Header(props) {
+
+function Header() {
+  const [parameters,setparameters]= useContext(DataContext);
   const [sidebar, setSidebar] = useState(false);
   const showSidebar = () => setSidebar(!sidebar);
 
@@ -147,15 +149,30 @@ function Header(props) {
         </div>
         <hr className="opacity-30 my-0 py-0" />
       </nav>
-      {props.error && <ErrorMessage />}
+      
+      {
+        parameters[0].error==null?" " :
+          <div className="border-red-800 flex justify-between text-red-900 border-2 m-1 bg-red-400 bg-opacity-90 rounded-md">
+            <p className="m-4">{parameters[0].error}</p>
+            <button className="mx-6" onClick={() => setparameters([
+
+              {
+                accessToken: null,
+                refreshToken: null,
+                error: null,
+                loading: false
+              }
+
+
+            ])}>x</button>
+          </div>
+      
+      }
+      
+
     </div>
   );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    error: state.error,
-  };
-};
 
-export default connect(mapStateToProps)(Header);
+export default Header;

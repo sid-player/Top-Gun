@@ -1,10 +1,10 @@
-import React,{ useState } from "react";
-import { connect } from "react-redux";
-import * as actions from "../../store/actions/auth";
+import React,{ useState,useContext } from "react";
+import {DataContext} from "../../ContextApi"
+import axios from "axios";
 
-function Signup(props) {
+function Signup() {
   
-
+  const [parameters,setparameters]= useContext(DataContext);
   const [username,setUsername] = useState("")
   const [email,setEmail] = useState("")
   const [password1,setPassword1] = useState("")
@@ -12,8 +12,52 @@ function Signup(props) {
   
   const HandleForm = event => {
     event.preventDefault();
-    props.Signup(username,email,password1,password2);
+    axios.post("https://topgun-test1.herokuapp.com/",{
+            username: username,
+            email: email,
+            password1: password1,
+            password2: password2
+        })
+        .then(res => {
+            const accessToken = res.data.access;
+            const refreshToken = res.data.refresh;
+            localStorage.setItem("accessToken",accessToken);
+            localStorage.setItem("refreshToken",refreshToken);
+            
+            setparameters([
+           
+              {
+                   accessToken : accessToken,
+                   refreshToken : refreshToken,
+                   error : null,
+                   loading : false
+               }
+           
+          
+          ])})
+        .catch(error => {
+            let data = error.response.data
+            let message = "";
+            if(data.error)message=data.error
+            if(data.username)message=data.username[0]
+            if(data.email)message=data.email[0]
+            setparameters([
+           
+              {
+                   accessToken : null,
+                   refreshToken : null,
+                   error : message,
+                   loading : false
+               }
+           
+          
+          ])
+        })
+        
+       
+    
   } 
+ 
   
   return (
     <>
@@ -32,7 +76,7 @@ function Signup(props) {
                 alt="Workflow"
               />
               <h2 className="mt-6 text-center text-2xl  font-medium text-gray-700">
-                Sign In to Get Exclusive Benifits!
+                Sign In to Get Exclusive Benifits! 
               </h2>
             </div>
             <form className="mt-8 space-y-6" onSubmit={event=>{HandleForm(event)}}>
@@ -134,10 +178,5 @@ function Signup(props) {
   );
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    Signup: (username,email,password1,password2)=>dispatch(actions.authSignup(username,email,password1,password2))
-  }
-}
 
-export default connect(null,mapDispatchToProps)(Signup)
+export default Signup
