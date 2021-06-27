@@ -131,14 +131,42 @@ function Search()
     const [Search, setSearch]= useState("");
     const [SearchResults, setSearchResults] = useState(data)
     const [listToDisplay, setListToDisplay] = useState(null)
-   
+   const [tag, setTag] = useState('')
+   const [flag, setFlag] = useState(false)
     
 
     useEffect(()=>{
-        setListToDisplay(SearchResults.map( object => 
+        console.log('render')
+      
+             return (
+                setListToDisplay(SearchResults.map( object => 
      
-    //    iterating over data
-       <div>
+                    //    iterating over data
+                       
+                             cardDisplay(object)
+                        ))
+            )
+        
+       
+        
+    }, [SearchResults,flag])
+
+ 
+    function exactSearch(event){
+        const searchItem= event.target.value;
+        setSearch(searchItem);
+    }
+    
+    function tagShow(){
+        setFlag(true)
+        //console.log(data.filter(obj=>obj.Tag=='temp'))
+        const tag_data=data.filter(obj=>obj.Tag==='temp')
+        setTag(tag_data)
+      
+    }
+    function cardDisplay(object){
+        return (
+            <div>
             <a href={object.url} target="_blank" rel="noreferrer" className=" mt-3  justify-center text-sm md:text-l text-gray-700">
                 <div className=" mt-4 justify-center overflow-hidden shadow transform hover:scale-105 hover:mb-2 hover:bg-gray-100  
                 bg-gray-50 break-words border-b-2 rounded p-6 md:p-8 my-1 font-medium  "
@@ -164,26 +192,19 @@ function Search()
                 </div>
             </a>
         </div>
-        ))
-    }, [SearchResults])
-
- 
-    function exactSearch(event){
-        const searchItem= event.target.value;
-        setSearch(searchItem);
+        )
     }
-    
-    
-
     function onChangeHandler()
+    
     {
+        setFlag(false)
         const value= Search;
         if(value===""){
             setSearchResults(data);
             // setloading(false);
             return;
         }
-
+        
         // setTimeout(()=>{
         //   console.log("loading");
         // },3000);
@@ -229,9 +250,8 @@ function Search()
         </div>
 
         <div className='my-3 flex flex-wrap -m-1 w-3/4 md:w-2/3'>
-                <button className="m-1 bg-gray-200 hover:bg-gray-300 rounded-full px-2 font-bold text-sm leading-loose cursor-pointer" >Miscelleneous</button>
-                <button className="m-1 bg-gray-200 hover:bg-gray-300 rounded-full px-2 font-bold text-sm leading-loose cursor-pointer">Miscelleneous</button>
-                <button className="m-1 bg-gray-200 hover:bg-gray-300 rounded-full px-2 font-bold text-sm leading-loose cursor-pointer">Miscelleneous</button>
+                <button className="m-1 bg-gray-200 hover:bg-gray-300 rounded-full px-2 font-bold text-sm leading-loose cursor-pointer"onClick={tagShow} >Temp tag</button>
+                
             
             </div>
         
@@ -243,7 +263,9 @@ function Search()
            {
             //    loading === false ?
               
-               listToDisplay
+              flag? tag.map((objetc=>(
+                  cardDisplay(objetc)
+              ))):listToDisplay
             //    :
             //     <Loader
             //     type="Puff"
