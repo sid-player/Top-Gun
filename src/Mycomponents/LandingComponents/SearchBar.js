@@ -119,13 +119,13 @@
 import data from "../../BookmarkData";
 import {useState, useEffect} from "react";
 
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
-import Loader from "react-loader-spinner";
+// import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+// import Loader from "react-loader-spinner";
 
 
 function Search()
 {
-    const [loading, setloading]= useState(false);
+    // const [loading, setloading]= useState(false);
     const [Search, setSearch]= useState("");
     const [SearchResults, setSearchResults] = useState(data)
     const [listToDisplay, setListToDisplay] = useState(null)
@@ -150,6 +150,10 @@ function Search()
 
                <div className= "truncate">
                {object.name}
+               
+               </div>
+               <div>
+                   Tags-{object.Tag}
                </div>
                
                 </div>
@@ -171,15 +175,15 @@ function Search()
         const value= Search;
         if(value===""){
             setSearchResults(data);
-            setloading(false);
+            // setloading(false);
             return;
         }
 
-        setTimeout(()=>{
-          console.log("loading");
-        },3000);
+        // setTimeout(()=>{
+        //   console.log("loading");
+        // },3000);
 
-        setloading(true);
+        // setloading(true);
 
         const searchArray = value.toLowerCase().split(" ").filter(word=>word.length>0);
         let scoreArray = []
@@ -203,7 +207,7 @@ function Search()
             setListToDisplay(<div className="bg-white rounded p-5 my-5  ">No Match Found</div>);
         }
 
-        setloading(false);
+        // setloading(false);
     }
     
     return (
@@ -225,17 +229,17 @@ function Search()
            
            <div className="relative mt-0  overflow-hidden grid  gap-6 sm:grid-cols-1 w-1/2 h-1/2  md:w-2/3 grid-cols-3 lg:grid-cols-4">
            {
-               loading === false ?
+            //    loading === false ?
               
                listToDisplay
-               :
-                <Loader
-                type="Puff"
-               color="#000000"
-               height={200}
-               width={200}
-               timeout={3000} 
-      />
+            //    :
+            //     <Loader
+            //     type="Puff"
+            //    color="#000000"
+            //    height={200}
+            //    width={200}
+            //    timeout={3000} 
+    //   />
            } 
            </div>
 
