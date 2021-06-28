@@ -250,8 +250,8 @@ function Search()
         </div>
 
         <div className='my-3 flex flex-wrap -m-1 w-3/4 md:w-2/3'>
-                <button className="m-1 bg-gray-200 hover:bg-gray-300 rounded-full px-2 font-bold text-sm leading-loose cursor-pointer"onClick={tagShow} >Temp tag</button>
-                
+                <button className="m-1 bg-gray-200 hover:bg-gray-300 rounded-full px-2 font-bold text-sm leading-loose cursor-pointer outline-none" onClick={tagShow} >Temp tag</button>
+
             
             </div>
         
