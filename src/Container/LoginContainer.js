@@ -1,30 +1,27 @@
-import React from 'react'
+import React,{useContext} from 'react'
 
 import Header from "../Mycomponents/LandingComponents/Header";
 import Login from "../Mycomponents/LandingComponents/Login";
 import {Redirect} from "react-router-dom";
-import { connect } from "react-redux"
-import Loading from "./LoadingScreen"
+import {DataContext} from "../ContextApi"
 
-function LoginContainer(props) {
+// import Loading from "./LoadingScreen"
 
-    if(props.loggedin)
+function LoginContainer() {
+    const parameters = useContext(DataContext)[0];
+    if(parameters[0].accessToken==null && parameters[0].refreshToken==null)
     {
-        return <Redirect to="/Home"/>
+        return (
+            <>
+                <Header />
+                <Login/>
+            </>
+        )
     }
-    return (
-        <>
-            <Header />
-            {props.loading ? <Loading /> : <Login/>}
-        </>
-    )
+    return <Redirect to="/Home"/>
+   
 }
 
-const mapStateToProps = state => {
-    return {
-        loggedin: state.accessToken,
-        loading: state.loading
-    }
-}
 
-export default connect(mapStateToProps)(LoginContainer);
+
+export default LoginContainer;

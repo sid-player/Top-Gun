@@ -160,7 +160,7 @@ function Search()
     function tagShow(e){
         setFlag(true)
         //console.log(data.filter(obj=>obj.Tag=='temp'))
-        const tag_data=data.filter(obj=>obj.Tag==e.target.value)
+        const tag_data=data.filter(obj=>obj.Tag===e.target.value)
         setTag(tag_data)
       
     }

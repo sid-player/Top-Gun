@@ -12,10 +12,12 @@ import Bookmark from "./Container/BookmarksContainer";
 
 import Portfolio from "./Container/PortfolioContainer";
 import Team from "./Container/TeamContainer";
+import {DataProvider} from './ContextApi'
 
 export default function App() {
   return (
-    <Router>
+    <DataProvider>
+     <Router>
       <Switch>
         <Route exact path="/" component={Landing} />
         <Route exact path="/About" component={About} />
@@ -28,5 +30,7 @@ export default function App() {
         <Route exact path="/Team" component={Team} />
       </Switch>
     </Router>
+    </DataProvider>
+    
   );
 }
