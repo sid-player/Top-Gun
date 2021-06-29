@@ -4,7 +4,6 @@
 
 // function Search()
 // {
-//     const [loading, setloading]= useState(false);
 //     const [Search, setSearch]= useState("");
 //     const [SearchResults, setSearchResults] = useState(data)
 //     const [listToDisplay, setListToDisplay] = useState(null)
@@ -118,7 +117,6 @@ import { useState, useEffect } from "react";
 // import Loader from "react-loader-spinner";
 
 function Search() {
-  // const [loading, setloading]= useState(false);
   const [Search, setSearch] = useState("");
   const [SearchResults, setSearchResults] = useState(data);
   const [listToDisplay, setListToDisplay] = useState(null);
@@ -128,13 +126,7 @@ function Search() {
   useEffect(() => {
     console.log("render");
 
-    return setListToDisplay(
-      SearchResults.map((object) =>
-        //    iterating over data
-
-        cardDisplay(object)
-      )
-    );
+    return setListToDisplay(SearchResults.map((object) => cardDisplay(object)));
   }, [SearchResults, flag]);
 
   function exactSearch(event) {
@@ -150,40 +142,38 @@ function Search() {
   }
   function cardDisplay(object) {
     return (
-      <div className="break-inside p-8 my-6 bg-red-100 rounded-lg">
-        <a
-          href={object.url}
-          target="_blank"
-          rel="noreferrer"
-          className=" mt-3  justify-center text-sm md:text-l text-gray-700"
-        >
-          <div
-            className=" mt-4 justify-center overflow-hidden shadow transform hover:scale-105 hover:mb-2 hover:bg-gray-100  
-                bg-gray-50 break-words border-b-2 rounded p-6 md:p-8 my-1 font-medium  "
-            key={object.id}
-          >
-            {/* for dummy image */}
-            {object.image.length !== 0 ? (
-              <img
-                src={object.image}
-                alt=""
-                className="w-full h-40 object-contain  justify-center"
-              />
-            ) : (
-              <img
-                src="https://picsum.photos/id/1/180"
-                alt=""
-                className="h-40
-                    object-contain justify-center"
-              />
-            )}
+      <div className="break-inside p-6 my-4 transition hover:shadow-lg ">
+        {/* hover:bg-red-200 For hover on the whole card */}
+        {/* border-b-2 border-transparent hover:border-b-2 hover:border-black */}
 
-            <div className="">{object.name}</div>
-            <div className="border-2 rounded-xl text-center  mx-auto mt-2 bg-gray-200 font-bold text-gray-900">
+        <div
+          className=" mt-4 justify-center overflow-hidden transform transition hover:scale-105 hover:mb-2 
+                 break-words p-6 md:p-8 my-1 "
+          key={object.id}
+        >
+          {/* for dummy image */}
+          {object.image.length !== 0 ? (
+            <img src={object.image} alt="" className="object-contain mx-auto" />
+          ) : (
+            <img
+              src="https://picsum.photos/id/1/180"
+              alt={object.name}
+              className="object-contain mx-auto"
+            />
+          )}
+
+          <div className="text-center text-lg mt-4">{object.name}</div>
+          <div className="flex flex-wrap items-center justify-around px-2 py-3">
+            <a href={object.url} target="_blank" rel="noreferrer">
+              <div className="bg-green-500 py-2 px-3 text-white mt-2 transition hover:bg-green-600 font-bold">
+                Visit Site
+              </div>
+            </a>
+            <div className=" capitalize w-auto border-2 rounded-xl text-center bg-gray-200 font-light text-gray-900 mt-2 px-2 ">
               {object.Tag}
             </div>
           </div>
-        </a>
+        </div>
       </div>
     );
   }
@@ -192,15 +182,8 @@ function Search() {
     const value = Search;
     if (value === "") {
       setSearchResults(data);
-      // setloading(false);
       return;
     }
-
-    // setTimeout(()=>{
-    //   console.log("loading");
-    // },3000);
-
-    // setloading(true);
 
     const searchArray = value
       .toLowerCase()
@@ -230,8 +213,6 @@ function Search() {
         <div className="bg-white rounded p-5 my-5  ">No Match Found</div>
       );
     }
-
-    // setloading(false);
   }
 
   return (
@@ -274,96 +255,9 @@ function Search() {
 
       {/* content */}
 
-      <div className="masonry before:box-inherit after:box-inherit w-full">
+      <div className="masonry before:box-inherit after:box-inherit w-full px-2">
         {flag ? tag.map((objetc) => cardDisplay(objetc)) : listToDisplay}
-        {/* <div className="break-inside p-8 my-6 bg-red-100 rounded-lg">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
-            iusto, sit voluptatum doloribus hic mollitia eaque itaque
-            reprehenderit excepturi quis. Soluta molestias quos veniam. Illo,
-            minus officiis repellendus porro exercitationem quis. Dignissimos
-            alias, rem rerum natus quibusdam et velit ratione.
-          </p>
-        </div>
-        <div className="break-inside p-8 my-6 bg-red-100 rounded-lg">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
-            iusto, sit voluptatum doloribus hic mollitia eaque itaque
-            reprehenderit excepturi quis. Soluta molestias quos veniam. Illo,
-            minus officiis repellendus porro exercitationem quis. Dignissimos
-            alias, rem rerum natus quibusdam et velit ratione.
-          </p>
-        </div>
-        <div className="break-inside p-8 my-6 bg-blue-100 rounded-lg">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
-            corrupti dicta iure animi molestias fuga beatae, placeat voluptates
-            dolorem rem quos optio, quidem perferendis ea delectus voluptas
-            eveniet iste itaque tempora inventore. Minima doloremque modi
-            veritatis aperiam perspiciatis expedita molestiae impedit aut
-            temporeum consequatur velit eius doloribus pariatur ea nihil quam,
-            sed ratione debitis quibusdam minus sequi esse adipisci enim et!
-            Labore!
-          </p>
-        </div>
-        <div className="break-inside p-8 my-6 bg-green-100 rounded-lg">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. In,
-            inventore?Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            id alias error doloremque!
-          </p>
-        </div>
-        <div className="break-inside p-8 my-6 bg-green-100 rounded-lg">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. In,
-            inventore?Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Ipsum minus quam nostrum facere a velit. Fuga numquam porro
-            molestiae libero dignissimos corporis recusandae, non impedit
-            doloremque commodi ad, voluptate eos sed adipisci rem autem dolorem
-            dolor necessitatibus quisquam asperiores quod, error inventore
-            repellat quidem. Aliquid minima doloribus magni distinctio mollitia.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque
-            magnam quo illum cupiditate est sapiente velit consectetur officia,
-            nulla maiores distinctio commodi incidunt accusamus suscipit maxime,
-            nihil aspernatur adipisci quos eligendi iusto. Nemo delectus animi
-            dicta incidunt laboriosam dolores ratione vitae, sit eos,
-            repudiandae, illo praesentium neque laborum porro molestiae.
-          </p>
-        </div>
-        <div className="break-inside p-8 my-6 bg-blue-100 rounded-lg">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. In,
-            inventore?Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Ipsum minus quam nostrum facere a velit. Fuga numquam porro dolor
-            necessitatibus quisquam asperiores quod, error inventore repellat
-            quidem. Aliquid minima doloribus magni distinctio mollitia. Lorem
-            ipsum dolor sit amet, consectetur adipisicing elit. Itaque magnam
-            quo illum cupiditate est sapiente velit consectetur officia, nulla
-            maiores distinctio commodi incidunt accusamus suscipit maxime, nihil
-            aspernatur adipisci quos eligendi iusto. Nemo delectus animi dicta
-            incidunt laboriosam dolores ratione vitae, sit eos, repudiandae,
-            illo praesentium neque laborum porro molestiae.
-          </p>
-        </div> */}
       </div>
-
-      {/* <div className="relative mt-0 overflow-hidden grid  gap-6 sm:grid-cols-1 w-3/4  md:w-2/3 grid-cols-2 lg:grid-cols-4"> */}
-      {/* {
-            //    loading === false ?
-              
-              flag? tag.map((objetc=>(
-                  cardDisplay(objetc)
-              ))):listToDisplay
-            //    :
-            //     <Loader
-            //     type="Puff"
-            //    color="#000000"
-            //    height={200}
-            //    width={200}
-            //    timeout={3000} 
-    //   />
-           }  */}
-      {/* </div> */}
     </div>
   );
 }
