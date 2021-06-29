@@ -10,15 +10,15 @@
 //     const [listToDisplay, setListToDisplay] = useState(null)
 
 //       useEffect(()=>{
-//         setListToDisplay(SearchResults.map( object => 
-     
+//         setListToDisplay(SearchResults.map( object =>
+
 //     //    iterating over data
 //        <div>
 //             <a href={object.url} target="_blank" rel="noreferrer" className=" mt-3  justify-center text-sm md:text-l text-gray-700">
-//                 <div className=" mt-4 justify-center overflow-hidden shadow transform hover:scale-105 hover:mb-2 hover:bg-gray-100  bg-gray-50  
+//                 <div className=" mt-4 justify-center overflow-hidden shadow transform hover:scale-105 hover:mb-2 hover:bg-gray-100  bg-gray-50
 //                   break-words   border-b-2 rounded p-4 md:p-8 my-1 font-medium  "
 //               key={object.id}>
-               
+
 //                 {/* for dummy image */}
 //                 {
 //                     object.image.length !==0 ?
@@ -31,14 +31,13 @@
 //                <div className= "truncate">
 //                {object.name}
 //                </div>
-               
+
 //                 </div>
 //             </a>
 //         </div>
 //         ))
 //     }, [SearchResults])
 
- 
 //     function exactSearch(event){
 //         const searchItem= event.target.value;
 //         setSearch(searchItem);
@@ -73,10 +72,9 @@
 //             setListToDisplay(<div className="bg-white rounded p-5 my-5  ">No Match Found</div>);
 //         }
 //     }
-    
+
 //     return (
 
-  
 //     // search bar
 //     <div className="Search my-4 flex flex-col items-center justify-center">
 //       <div className="border-1 border-gray-100 shadow w-4/5 md:w-2/3 relative flex my-2">
@@ -93,17 +91,13 @@
 
 //         <div className=" border-2 border-gray-200 shadow-md w-2/5 md:w-2/3 relative  bg-gray-100 rounded-lg flex">
 //         {/* <SearchIcon> */}
-//             <input className="w-full rounded-full bg-gray-100 p-4  h-16 placeholder-gray-900" type="text" placeholder="Search Anything..." 
+//             <input className="w-full rounded-full bg-gray-100 p-4  h-16 placeholder-gray-900" type="text" placeholder="Search Anything..."
 //              onChange={exactSearch} value={Search} />
 //              <button onClick= {onChangeHandler} className= "ml-4 rounded-lg " > Search </button>
 //         </div>
 
-        
-        
-        
-
 //         {/* content */}
-           
+
 //         <div className="relative mt-0  overflow-hidden grid gap-6 sm:grid-cols-1 w-1/2 h-1/2  md:w-2/3 grid-cols-3 lg:grid-cols-4">
 //             {listToDisplay}
 //         </div>
@@ -117,150 +111,244 @@
 
 // export default Search;
 
-
 import data from "../../BookmarkData";
-import {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 
 // import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 // import Loader from "react-loader-spinner";
 
+function Search() {
+  // const [loading, setloading]= useState(false);
+  const [Search, setSearch] = useState("");
+  const [SearchResults, setSearchResults] = useState(data);
+  const [listToDisplay, setListToDisplay] = useState(null);
+  const [tag, setTag] = useState("");
+  const [flag, setFlag] = useState(false);
 
-function Search()
-{
-    // const [loading, setloading]= useState(false);
-    const [Search, setSearch]= useState("");
-    const [SearchResults, setSearchResults] = useState(data)
-    const [listToDisplay, setListToDisplay] = useState(null)
-   const [tag, setTag] = useState('')
-   const [flag, setFlag] = useState(false)
-    
+  useEffect(() => {
+    console.log("render");
 
-    useEffect(()=>{
-        console.log('render')
-      
-             return (
-                setListToDisplay(SearchResults.map( object => 
-     
-                    //    iterating over data
-                       
-                             cardDisplay(object)
-                        ))
-            )
-        
-       
-        
-    }, [SearchResults,flag])
+    return setListToDisplay(
+      SearchResults.map((object) =>
+        //    iterating over data
 
- 
-    function exactSearch(event){
-        const searchItem= event.target.value;
-        setSearch(searchItem);
-    }
-    
-    function tagShow(e){
-        setFlag(true)
-        //console.log(data.filter(obj=>obj.Tag=='temp'))
-        const tag_data=data.filter(obj=>obj.Tag===e.target.value)
-        setTag(tag_data)
-      
-    }
-    function cardDisplay(object){
-        return (
-            <div>
-            <a href={object.url} target="_blank" rel="noreferrer" className=" mt-3  justify-center text-sm md:text-l text-gray-700">
-                <div className=" mt-4 justify-center overflow-hidden shadow transform hover:scale-105 hover:mb-2 hover:bg-gray-100  
-                bg-gray-50 break-words border-b-2 rounded p-6 md:p-8 my-1 font-medium  "
-              key={object.id}>
-               
-                {/* for dummy image */}
-                {
-                    object.image.length !==0 ?
-                   <img src={object.image} alt="" className="w-full h-40 object-contain  justify-center"/>
-                    :
-                   <img src="https://picsum.photos/id/1/180" alt="" className="h-40
-                    object-contain justify-center"/>
-                }
+        cardDisplay(object)
+      )
+    );
+  }, [SearchResults, flag]);
 
-               <div className= "truncate">
-               {object.name}
-               
-               </div>
-               <div className="border-2 rounded-xl text-center  mx-auto mt-2 bg-gray-200 font-bold text-gray-900">
-                   {object.Tag}
-               </div>
-               
-                </div>
-            </a>
-        </div>
-        )
-    }
-    function onChangeHandler()
-    
-    {
-        setFlag(false)
-        const value= Search;
-        if(value===""){
-            setSearchResults(data);
-            // setloading(false);
-            return;
-        }
-        
-        // setTimeout(()=>{
-        //   console.log("loading");
-        // },3000);
+  function exactSearch(event) {
+    const searchItem = event.target.value;
+    setSearch(searchItem);
+  }
 
-        // setloading(true);
-    
-        const searchArray = value.toLowerCase().split(" ").filter(word=>word.length>0);
-        let scoreArray = []
-        data.forEach( object => {
-            let score=0;
-            let nameArray = object.name.toLowerCase().split(" ").filter(word=>word.length>0)
-            searchArray.forEach( word => {
-                if(object.name.toLowerCase().includes(word))score+=5;
-                if(object.url.toLowerCase().includes(word))score++;
-                if(nameArray.includes(word))score+=5;
-            });
-            if(score)scoreArray.push([score,object]);
-        })
-        if(scoreArray.length){
-            scoreArray.sort((a,b)=>b[0]-a[0]);
-            let tempSearchResults = []
-            scoreArray.forEach( pair => tempSearchResults.push( pair[1] ));
-            setSearchResults( tempSearchResults )
-        }
-        else{
-            setListToDisplay(<div className="bg-white rounded p-5 my-5  ">No Match Found</div>);
-        }
-
-        // setloading(false);
-    }
-
-    
-    
+  function tagShow(e) {
+    setFlag(true);
+    //console.log(data.filter(obj=>obj.Tag=='temp'))
+    const tag_data = data.filter((obj) => obj.Tag === e.target.value);
+    setTag(tag_data);
+  }
+  function cardDisplay(object) {
     return (
+      <div className="break-inside p-8 my-6 bg-red-100 rounded-lg">
+        <a
+          href={object.url}
+          target="_blank"
+          rel="noreferrer"
+          className=" mt-3  justify-center text-sm md:text-l text-gray-700"
+        >
+          <div
+            className=" mt-4 justify-center overflow-hidden shadow transform hover:scale-105 hover:mb-2 hover:bg-gray-100  
+                bg-gray-50 break-words border-b-2 rounded p-6 md:p-8 my-1 font-medium  "
+            key={object.id}
+          >
+            {/* for dummy image */}
+            {object.image.length !== 0 ? (
+              <img
+                src={object.image}
+                alt=""
+                className="w-full h-40 object-contain  justify-center"
+              />
+            ) : (
+              <img
+                src="https://picsum.photos/id/1/180"
+                alt=""
+                className="h-40
+                    object-contain justify-center"
+              />
+            )}
 
-        // search bar
-    <div className="Search my-4 flex flex-col items-center justify-center">
-
-        <div className=" border-2 border-gray-200 shadow-sm md:shadow-md w-4/5 md:w-2/3 relative  bg-gray-100 rounded-lg flex">
-        {/* <SearchIcon> */}
-            <input className="w-full rounded-full bg-gray-100 p-2  h-12  placeholder-gray-900" type="text" placeholder="Search Anything..." onChange={exactSearch} value={Search} />
-             <button onClick= {onChangeHandler} className= "m-1 rounded-lg bg-gray-700 px-4 text-gray-100 hover:bg-gray-900" > Search </button>
-        </div>
-
-        <div className='my-3 flex flex-wrap -m-1 w-3/4 md:w-2/3'>
-                <button className="m-1 bg-gray-200 hover:bg-gray-300 rounded-full px-2 font-bold text-sm leading-loose cursor-pointer outline-none" onClick={tagShow} value="temp" >Temp tag</button>
-                <button className="m-1 bg-gray-200 hover:bg-gray-300 rounded-full px-2 font-bold text-sm leading-loose cursor-pointer outline-none" onClick={tagShow} value="Miscelleneous" >Misc tag</button>
-            
+            <div className="">{object.name}</div>
+            <div className="border-2 rounded-xl text-center  mx-auto mt-2 bg-gray-200 font-bold text-gray-900">
+              {object.Tag}
             </div>
-        
-        
+          </div>
+        </a>
+      </div>
+    );
+  }
+  function onChangeHandler() {
+    setFlag(false);
+    const value = Search;
+    if (value === "") {
+      setSearchResults(data);
+      // setloading(false);
+      return;
+    }
 
-        {/* content */}
-           
-           <div className="relative mt-0 overflow-hidden grid  gap-6 sm:grid-cols-1 w-3/4  md:w-2/3 grid-cols-2 lg:grid-cols-4">
-           {
+    // setTimeout(()=>{
+    //   console.log("loading");
+    // },3000);
+
+    // setloading(true);
+
+    const searchArray = value
+      .toLowerCase()
+      .split(" ")
+      .filter((word) => word.length > 0);
+    let scoreArray = [];
+    data.forEach((object) => {
+      let score = 0;
+      let nameArray = object.name
+        .toLowerCase()
+        .split(" ")
+        .filter((word) => word.length > 0);
+      searchArray.forEach((word) => {
+        if (object.name.toLowerCase().includes(word)) score += 5;
+        if (object.url.toLowerCase().includes(word)) score++;
+        if (nameArray.includes(word)) score += 5;
+      });
+      if (score) scoreArray.push([score, object]);
+    });
+    if (scoreArray.length) {
+      scoreArray.sort((a, b) => b[0] - a[0]);
+      let tempSearchResults = [];
+      scoreArray.forEach((pair) => tempSearchResults.push(pair[1]));
+      setSearchResults(tempSearchResults);
+    } else {
+      setListToDisplay(
+        <div className="bg-white rounded p-5 my-5  ">No Match Found</div>
+      );
+    }
+
+    // setloading(false);
+  }
+
+  return (
+    // search bar
+    <div className="Search my-4 flex flex-col items-center justify-center">
+      <div className=" border-2 border-gray-200 shadow-sm md:shadow-md w-4/5 md:w-2/3 relative  bg-gray-100 rounded-lg flex">
+        {/* <SearchIcon> */}
+        <input
+          className="w-full rounded-full bg-gray-100 p-2  h-12  placeholder-gray-900"
+          type="text"
+          placeholder="Search Anything..."
+          onChange={exactSearch}
+          value={Search}
+        />
+        <button
+          onClick={onChangeHandler}
+          className="m-1 rounded-lg bg-gray-700 px-4 text-gray-100 hover:bg-gray-900"
+        >
+          {" "}
+          Search{" "}
+        </button>
+      </div>
+
+      <div className="my-3 flex flex-wrap -m-1 w-3/4 md:w-2/3">
+        <button
+          className="m-1 bg-gray-200 hover:bg-gray-300 rounded-full px-2 font-bold text-sm leading-loose cursor-pointer outline-none"
+          onClick={tagShow}
+          value="temp"
+        >
+          Temp tag
+        </button>
+        <button
+          className="m-1 bg-gray-200 hover:bg-gray-300 rounded-full px-2 font-bold text-sm leading-loose cursor-pointer outline-none"
+          onClick={tagShow}
+          value="Miscelleneous"
+        >
+          Misc tag
+        </button>
+      </div>
+
+      {/* content */}
+
+      <div className="masonry before:box-inherit after:box-inherit w-full">
+        {flag ? tag.map((objetc) => cardDisplay(objetc)) : listToDisplay}
+        {/* <div className="break-inside p-8 my-6 bg-red-100 rounded-lg">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
+            iusto, sit voluptatum doloribus hic mollitia eaque itaque
+            reprehenderit excepturi quis. Soluta molestias quos veniam. Illo,
+            minus officiis repellendus porro exercitationem quis. Dignissimos
+            alias, rem rerum natus quibusdam et velit ratione.
+          </p>
+        </div>
+        <div className="break-inside p-8 my-6 bg-red-100 rounded-lg">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
+            iusto, sit voluptatum doloribus hic mollitia eaque itaque
+            reprehenderit excepturi quis. Soluta molestias quos veniam. Illo,
+            minus officiis repellendus porro exercitationem quis. Dignissimos
+            alias, rem rerum natus quibusdam et velit ratione.
+          </p>
+        </div>
+        <div className="break-inside p-8 my-6 bg-blue-100 rounded-lg">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
+            corrupti dicta iure animi molestias fuga beatae, placeat voluptates
+            dolorem rem quos optio, quidem perferendis ea delectus voluptas
+            eveniet iste itaque tempora inventore. Minima doloremque modi
+            veritatis aperiam perspiciatis expedita molestiae impedit aut
+            temporeum consequatur velit eius doloribus pariatur ea nihil quam,
+            sed ratione debitis quibusdam minus sequi esse adipisci enim et!
+            Labore!
+          </p>
+        </div>
+        <div className="break-inside p-8 my-6 bg-green-100 rounded-lg">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. In,
+            inventore?Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            id alias error doloremque!
+          </p>
+        </div>
+        <div className="break-inside p-8 my-6 bg-green-100 rounded-lg">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. In,
+            inventore?Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Ipsum minus quam nostrum facere a velit. Fuga numquam porro
+            molestiae libero dignissimos corporis recusandae, non impedit
+            doloremque commodi ad, voluptate eos sed adipisci rem autem dolorem
+            dolor necessitatibus quisquam asperiores quod, error inventore
+            repellat quidem. Aliquid minima doloribus magni distinctio mollitia.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque
+            magnam quo illum cupiditate est sapiente velit consectetur officia,
+            nulla maiores distinctio commodi incidunt accusamus suscipit maxime,
+            nihil aspernatur adipisci quos eligendi iusto. Nemo delectus animi
+            dicta incidunt laboriosam dolores ratione vitae, sit eos,
+            repudiandae, illo praesentium neque laborum porro molestiae.
+          </p>
+        </div>
+        <div className="break-inside p-8 my-6 bg-blue-100 rounded-lg">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. In,
+            inventore?Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Ipsum minus quam nostrum facere a velit. Fuga numquam porro dolor
+            necessitatibus quisquam asperiores quod, error inventore repellat
+            quidem. Aliquid minima doloribus magni distinctio mollitia. Lorem
+            ipsum dolor sit amet, consectetur adipisicing elit. Itaque magnam
+            quo illum cupiditate est sapiente velit consectetur officia, nulla
+            maiores distinctio commodi incidunt accusamus suscipit maxime, nihil
+            aspernatur adipisci quos eligendi iusto. Nemo delectus animi dicta
+            incidunt laboriosam dolores ratione vitae, sit eos, repudiandae,
+            illo praesentium neque laborum porro molestiae.
+          </p>
+        </div> */}
+      </div>
+
+      {/* <div className="relative mt-0 overflow-hidden grid  gap-6 sm:grid-cols-1 w-3/4  md:w-2/3 grid-cols-2 lg:grid-cols-4"> */}
+      {/* {
             //    loading === false ?
               
               flag? tag.map((objetc=>(
@@ -274,15 +362,10 @@ function Search()
             //    width={200}
             //    timeout={3000} 
     //   />
-           } 
-           </div>
-
-          
-       
-
+           }  */}
+      {/* </div> */}
     </div>
-    );
-   
+  );
 }
 
 export default Search;
