@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../Mycomponents/LandingComponents/Header";
 import Portfolio from "../Mycomponents/LandingComponents/Portfolio";
-import Footer from "../Mycomponents/HomeComponents/Footer";
+// import Footer from "../Mycomponents/HomeComponents/Footer";
 
 const PortfolioContainer = () => {
   return (
