@@ -1,11 +1,10 @@
-import React, { useState,useContext } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 // import ErrorMessage from "./Error";
-import {DataContext} from "../../ContextApi"
-
+import { DataContext } from "../../ContextApi";
 
 function Header() {
-  const [parameters,setparameters]= useContext(DataContext);
+  const [parameters, setparameters] = useContext(DataContext);
   const [sidebar, setSidebar] = useState(false);
   const showSidebar = () => setSidebar(!sidebar);
 
@@ -18,24 +17,6 @@ function Header() {
               to="/"
               className="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-3xl align-baseline"
             >
-              <svg
-                className="h-8 fill-current inline"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 512.005 512.005"
-              >
-                <rect
-                  fill="#2a2a31"
-                  x="16.539"
-                  y="425.626"
-                  width="479.767"
-                  height="50.502"
-                  transform="matrix(1,0,0,1,0,0)"
-                />
-                <path
-                  className="plane-take-off"
-                  d=" M 510.7 189.151 C 505.271 168.95 484.565 156.956 464.365 162.385 L 330.156 198.367 L 155.924 35.878 L 107.19 49.008 L 211.729 230.183 L 86.232 263.767 L 36.614 224.754 L 0 234.603 L 45.957 314.27 L 65.274 347.727 L 105.802 336.869 L 240.011 300.886 L 349.726 271.469 L 483.935 235.486 C 504.134 230.057 516.129 209.352 510.7 189.151 Z "
-                />
-              </svg>
               TOPGUN.VC
             </Link>
           </div>
@@ -149,30 +130,31 @@ function Header() {
         </div>
         <hr className="opacity-30 my-0 py-0" />
       </nav>
-      
-      {
-        parameters[0].error==null?" " :
-          <div className="border-red-800 flex justify-between text-red-900 border-2 m-1 bg-red-400 bg-opacity-90 rounded-md">
-            <p className="m-4">{parameters[0].error}</p>
-            <button className="mx-6" onClick={() => setparameters([
 
-              {
-                accessToken: null,
-                refreshToken: null,
-                error: null,
-                loading: false
-              }
-
-
-            ])}>x</button>
-          </div>
-      
-      }
-      
-
+      {parameters[0].error == null ? (
+        " "
+      ) : (
+        <div className="border-red-800 flex justify-between text-red-900 border-2 m-1 bg-red-400 bg-opacity-90 rounded-md">
+          <p className="m-4">{parameters[0].error}</p>
+          <button
+            className="mx-6"
+            onClick={() =>
+              setparameters([
+                {
+                  accessToken: null,
+                  refreshToken: null,
+                  error: null,
+                  loading: false,
+                },
+              ])
+            }
+          >
+            x
+          </button>
+        </div>
+      )}
     </div>
   );
 }
-
 
 export default Header;
