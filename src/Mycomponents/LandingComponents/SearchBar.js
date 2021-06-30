@@ -27,13 +27,13 @@ function Search() {
   }
   function cardDisplay(object) {
     return (
-      <div className="break-inside p-6 my-4 transition hover:shadow-lg ">
+      <div className="break-inside p-6 my-4 transition hover:shadow-lg border-2 border-gray-300 rounded-lg bg-gray-100">
         {/* hover:bg-red-200 For hover on the whole card */}
         {/* border-b-2 border-transparent hover:border-b-2 hover:border-black */}
 
         <div
           className=" mt-4 justify-center overflow-hidden transform transition hover:scale-105 hover:mb-2 
-                 break-words p-6 md:p-8 my-1 "
+                 break-words p-6 md:p-8 my-1  "
           key={object.id}
         >
           {/* for dummy image */}
@@ -122,19 +122,20 @@ function Search() {
       </div>
 
       <div className="my-3 flex flex-wrap -m-1 w-3/4 md:w-2/3">
+        <div className="m-1 rounded-full px-2   leading-loose outline-none  block">Topics-</div>
         <button
           className="m-1 bg-gray-200 hover:bg-gray-300 rounded-full px-2 font-bold text-sm leading-loose cursor-pointer outline-none"
           onClick={tagShow}
           value="temp"
         >
-          Temp tag
+          Temp
         </button>
         <button
           className="m-1 bg-gray-200 hover:bg-gray-300 rounded-full px-2 font-bold text-sm leading-loose cursor-pointer outline-none"
           onClick={tagShow}
           value="Miscelleneous"
         >
-          Misc tag
+          Miscelleneous
         </button>
       </div>
 

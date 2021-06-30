@@ -3,12 +3,12 @@ import React from 'react'
 
 function Content() {
     return (
-        <div className="mt-12 md:mt-24 flex flex-col items-center  h-screen bg-white">
+        <div className="mt-12 md:mt-16 md:pt-4 flex flex-col items-center  h-screen bg-gray-100 ">
             <h1 className="w-full mt-10 text-3xl md:text-5xl font-bold leading-tight text-center text-gray-800">
                 About Us
             </h1>
-            <div className="bg-white hover:grow shadow-xl my-6 md:my-8 mx-3 lg:mx-auto w-full md:w-4/5 lg:w-3/5 text-md md:text-xl
-             text-black font-semibold text-left rounded-md px-8 py-6">
+            <div className="bg-gray-100 hover:grow shadow-xl my-6 md:my-8 mx-3 lg:mx-auto w-full md:w-4/5 lg:w-3/5 text-md md:text-xl
+              text-gray-700 font-semibold text-left rounded-md px-8 py-6">
                 <p>
                     TopGun.VC builds entrepreneur’s faith in their vision and nurtures them with direction for the long war ahead.
                 </p>

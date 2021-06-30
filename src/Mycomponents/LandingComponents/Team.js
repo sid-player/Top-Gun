@@ -11,7 +11,7 @@ const Team = () => {
   return (
     <div className="bg-gray-50 p-6 h-full md:h-screen  flex flex-col items-center justify-center">
       <div className="mt-10">
-        <h1 className="text-2xl font-serif sm:text-3xl mt-2 mx-auto text-center text-gray-900 pb-6 w-5/6 sm:w-4/6">
+        <h1 className="text-2xl  sm:text-3xl mt-2 mx-auto text-center text-gray-900 pb-6 w-5/6 sm:w-4/6">
           The Talented People Behind the Scenes of the Organization
         </h1>
       </div>

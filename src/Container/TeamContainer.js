@@ -8,7 +8,7 @@ const PortfolioContainer = () => {
     <div>
       <Header />
       <Team />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

@@ -8,7 +8,7 @@ const PortfolioContainer = () => {
     <div>
       <Header />
       <Portfolio />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
