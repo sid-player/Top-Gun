@@ -156,7 +156,7 @@ function Search() {
             <img src={object.image} alt="" className="object-contain mx-auto" />
           ) : (
             <img
-              src="https://picsum.photos/id/1/180"
+              src="https://via.placeholder.com/200?text=TopGun.vc"
               alt={object.name}
               className="object-contain mx-auto"
             />
