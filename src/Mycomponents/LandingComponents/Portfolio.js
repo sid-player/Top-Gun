@@ -10,16 +10,7 @@ import logo6 from "./Logo6.png";
 const Portfolio = () => {
   return (
     <>
-      {/* <div className="w-full h-full flex flex-wrap flex-col md:flex-row items-center bg-gray-50 p-6"> */}
       <div className="bg-gray-100 p-6 h-full sm:h-screen flex items-center justify-center">
-        {/* <div className=" flex flex-col w-full md:w-1/2  items-start ">
-            <div className=" text-3xl text-center">HEADING</div>
-            <p className=" text-xl text-gray-700">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis eos
-              nisi consequuntur? Harum, dolor a modi distinctio iusto ipsam
-              dolorem? Voluptatum commodi provident obcaecati.
-            </p>
-          </div> */}
 
         <div className="">
           <div className="mt-10 md:mt-20 ">

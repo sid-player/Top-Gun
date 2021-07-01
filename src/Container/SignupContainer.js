@@ -13,7 +13,7 @@ function SignupContainer(props) {
     {
         return (<Signup/>)
     }
-    return <Redirect to="/Home"/>
+    return <Redirect to="/"/>
   
 }
 

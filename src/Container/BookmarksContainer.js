@@ -1,5 +1,4 @@
 import React from "react";
-// import data from '.././BookmarkData';
 import Header from "../Mycomponents/LandingComponents/Header";
 import Search from "../Mycomponents/LandingComponents/SearchBar";
 
