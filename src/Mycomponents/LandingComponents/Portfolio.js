@@ -1,11 +1,11 @@
 import React from "react";
 import "./Portfolio.css";
-import logo1 from "./Logo1.png";
-import logo2 from "./Logo2.jpg";
-import logo3 from "./Logo3.png";
-import logo4 from "./Logo4.png";
-import logo5 from "./Logo5.jpg";
-import logo6 from "./Logo6.png";
+import logo1 from "./img/Logo1.png";
+import logo2 from "./img/Logo2.jpg";
+import logo3 from "./img/Logo3.png";
+import logo4 from "./img/Logo4.png";
+import logo5 from "./img/Logo5.jpg";
+import logo6 from "./img/Logo6.png";
 
 const Portfolio = () => {
   return (

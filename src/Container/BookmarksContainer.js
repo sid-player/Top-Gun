@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../Mycomponents/LandingComponents/Header";
-import Search from "../Mycomponents/LandingComponents/SearchBar";
+import Search from "../Mycomponents/BookmarkComponents/SearchBar";
 
 function BookmarksContainer() {
   return (

@@ -1,12 +1,7 @@
 import React from "react";
-// import logo4 from './Logo4.png'
-// import logo6 from './Logo6.png'
-import DV from "./DV.jpg";
-import PC from "./PC.jpg";
+import DV from "./img/DV.jpg";
+import PC from "./img/PC.jpg";
 const Team = () => {
-  // let style = {
-  //     background: "linear-gradient(90deg, #d53369 0%, #daae51 100%)",
-  // };
 
   return (
     <div className="bg-gray-50 p-6 h-full md:h-screen  flex flex-col items-center justify-center">
