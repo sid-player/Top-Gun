@@ -19,7 +19,7 @@ export default function Hero() {
             <div className="anim-container block items-center justify-center md:justify-start text-gray-700">
               <span className="">
                 We see what the VC's don't
-                <div className="flip float-center">
+                <div className="flip float-center relative top-4 bottom-0 left-2">
                   <div>
                     <div>😉</div>
                   </div>
