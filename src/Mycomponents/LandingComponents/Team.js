@@ -2,11 +2,10 @@ import React from "react";
 import DV from "./img/DV.jpg";
 import PC from "./img/PC.jpg";
 const Team = () => {
-
   return (
     <div className="bg-gray-50 p-6 h-full md:h-screen  flex flex-col items-center justify-center">
-      <div className="mt-10">
-        <h1 className="text-2xl  sm:text-3xl mt-2 mx-auto text-center text-gray-900 pb-6 w-5/6 sm:w-4/6">
+      <div className="my-10">
+        <h1 className="w-full mt-10 text-2xl md:text-4xl font-bold leading-tight text-center text-gray-800">
           The Talented People Behind the Scenes of the Organization
         </h1>
       </div>
