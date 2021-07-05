@@ -105,9 +105,14 @@ function Search() {
         <input
           className="w-full rounded-full bg-gray-100 p-2  h-12  placeholder-gray-900"
           type="text"
-          placeholder="Search Anything..."
+          placeholder="Type and press enter to search..."
           onChange={exactSearch}
           value={Search}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              onChangeHandler();
+            }
+          }}
         />
         <button
           onClick={onChangeHandler}
