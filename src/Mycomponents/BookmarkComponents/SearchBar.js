@@ -27,10 +27,7 @@ function Search() {
   }
   function cardDisplay(object) {
     return (
-      <div className="break-inside p-6 my-4 transition hover:shadow-lg border-2 border-gray-300 rounded-lg bg-gray-100">
-        {/* hover:bg-red-200 For hover on the whole card */}
-        {/* border-b-2 border-transparent hover:border-b-2 hover:border-black */}
-
+      <div className="break-inside p-6 my-4 transition hover:shadow-lg border-2 border-gray-300 rounded-lg bg-gray-50">
         <div
           className=" mt-4 justify-center overflow-hidden transform transition hover:scale-105 hover:mb-2 
                  break-words p-6 md:p-8 my-1  "
@@ -48,13 +45,13 @@ function Search() {
           )}
 
           <div className="text-center text-lg mt-4">{object.name}</div>
-          <div className="flex flex-wrap items-center justify-around px-2 py-3">
+          <div className="flex flex-col items-center justify-center px-2 py-3">
             <a href={object.url} target="_blank" rel="noreferrer">
-              <div className="bg-green-500 py-2 px-3 text-white mt-2 transition hover:bg-green-600 font-bold">
+              <div className="bg-green-500 py-2 px-3 text-white m-2 transition hover:bg-green-600 font-bold">
                 Visit Site
               </div>
             </a>
-            <div className=" capitalize w-auto border-2 rounded-xl text-center bg-gray-200 font-light text-gray-900 mt-2 px-2 ">
+            <div className="capitalize w-auto border-2 rounded-xl text-center bg-gray-200 text-gray-900 mt-2 px-2 text-sm">
               {object.Tag}
             </div>
           </div>
@@ -114,15 +111,16 @@ function Search() {
         />
         <button
           onClick={onChangeHandler}
-          className="m-1 rounded-lg bg-gray-700 px-4 text-gray-100 hover:bg-gray-900"
+          className="m-1 rounded-lg bg-green-500 px-4 text-gray-100 hover:bg-green-600"
         >
-          {" "}
-          Search{" "}
+          Search
         </button>
       </div>
 
       <div className="my-3 flex flex-wrap -m-1 w-3/4 md:w-2/3">
-        <div className="m-1 rounded-full px-2   leading-loose outline-none  block">Topics-</div>
+        <div className="m-1 rounded-full px-2 leading-loose outline-none  block">
+          Topics-
+        </div>
         <button
           className="m-1 bg-gray-200 hover:bg-gray-300 rounded-full px-2 font-bold text-sm leading-loose cursor-pointer outline-none"
           onClick={tagShow}

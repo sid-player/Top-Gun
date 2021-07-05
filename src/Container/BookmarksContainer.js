@@ -6,7 +6,7 @@ function BookmarksContainer() {
   return (
     <>
       <Header />
-      <div className="pt-20 min-h-screen bg-gray-50">
+      <div className="pt-20 min-h-screen bg-gray-100">
         <Search />
         <div style={{ height: "65vh" }}></div>
       </div>
