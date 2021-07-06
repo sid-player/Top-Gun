@@ -1,68 +1,61 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-
 function Search() {
   const [Search, setSearch] = useState("");
-  const [data1, setdata] = useState()
+  const [data1, setdata] = useState();
   const [SearchResults, setSearchResults] = useState();
-  const [showalltags, setshowalltags] = useState()
-  const [displayalltags, setdisplayalltags] = useState()
+  const [showalltags, setshowalltags] = useState();
+  const [displayalltags, setdisplayalltags] = useState();
 
-  const url = "https://topgun-test1.herokuapp.com/api/bookmarks/?format=json"
-  console.log(url)
+  const url = "https://topgun-test1.herokuapp.com/api/bookmarks/?format=json";
+  console.log(url);
   useEffect(() => {
-    axios
-      .get(url)
-      .then((res) => {
-        setdata(res.data);
-        console.log(res.da)
-        setSearchResults(res.data)
-      })
-  }, [])
+    axios.get(url).then((res) => {
+      setdata(res.data);
+      console.log(res.da);
+      setSearchResults(res.data);
+    });
+  }, []);
 
-  const url2 = "https://topgun-test1.herokuapp.com/api/tags/?format=json"
-  console.log(url2)
+  const url2 = "https://topgun-test1.herokuapp.com/api/tags/?format=json";
+  console.log(url2);
   useEffect(() => {
-    axios
-      .get(url2)
-      .then((res) => {
-        setshowalltags(res.data);
-        console.log(res.data);
-        
-      })
-  }, [])
+    axios.get(url2).then((res) => {
+      setshowalltags(res.data);
+      console.log(res.data);
+    });
+  }, []);
 
-   useEffect(() => {
-    if (typeof showalltags !== 'undefined'){
+  useEffect(() => {
+    if (typeof showalltags !== "undefined") {
       setdisplayalltags(
-        showalltags.map((obj,index)=>(
-         <button
-         className="m-1 bg-gray-200 hover:bg-gray-300 rounded-full px-2 font-bold text-sm leading-loose cursor-pointer outline-none" key={index}
-         onClick={tagShow}
-         value={obj.tags}
-       >
-         {obj.tags}
-       </button>
+        showalltags.map((obj, index) => (
+          <button
+            className="m-1 bg-gray-200 hover:bg-gray-300 rounded-full px-2 font-bold text-sm leading-loose cursor-pointer outline-none"
+            key={index}
+            onClick={tagShow}
+            value={obj.tags}
+          >
+            {obj.tags}
+          </button>
         ))
-      )
+      );
     }
-     
-     
-   }, [showalltags])
+  }, [showalltags]);
 
-  function fun(array)
-  { 
-    var items=[]
-    for(var i=0;i<array.length;i++)
-    {
-       items.push(<div className="capitalize inline-block w-auto border-2 rounded-xl text-center bg-gray-200 text-gray-900 mt-2 px-2 text-sm">{array[i]}</div>)
-        
-      
+  function fun(array) {
+    var items = [];
+    for (var i = 0; i < array.length; i++) {
+      items.push(
+        <div className="capitalize inline-block w-auto border-2 rounded-xl text-center bg-gray-200 text-gray-900 mt-2 px-2 text-sm">
+          {array[i]}
+        </div>
+      );
     }
-    return items 
+    return items;
   }
-  
+
   const [listToDisplay, setListToDisplay] = useState(null);
   const [tag, setTag] = useState();
   const [flag, setFlag] = useState(false);
@@ -70,23 +63,19 @@ function Search() {
   useEffect(() => {
     console.log("render");
 
-    if (typeof SearchResults === 'undefined'){}
-        else{
-            return setListToDisplay(SearchResults.map((object) => cardDisplay(object)));
-        } 
+    if (typeof SearchResults === "undefined") {
+    } else {
+      return setListToDisplay(
+        SearchResults.map((object) => cardDisplay(object))
+      );
+    }
   }, [SearchResults, flag]);
-  
 
   function exactSearch(event) {
     const searchItem = event.target.value;
     setSearch(searchItem);
   }
 
- 
-    
-
-
-  
   function cardDisplay(object) {
     return (
       <div className="break-inside p-6 my-4 transition hover:shadow-lg border-2 border-gray-300 rounded-lg bg-gray-50">
@@ -113,12 +102,8 @@ function Search() {
                 Visit Site
               </div>
             </a>
-            
-            {
-              fun(object.tags)
-            }
-            
 
+            {fun(object.tags)}
           </div>
         </div>
       </div>
@@ -128,23 +113,21 @@ function Search() {
   function tagShow(e) {
     e.preventDefault();
     setFlag(true);
-    console.log("Clicked")
-    console.log(data1.length)
-    if(typeof data1 !== "undefined")
-    { 
-      const tag_data = data1.filter((obj) =>{
-        for(var i=0;i<obj.tags.length;i++)
-        {
-          if(obj.tags[i]===e.target.value){
+    console.log("Clicked");
+    console.log(data1.length);
+    if (typeof data1 !== "undefined") {
+      const tag_data = data1.filter((obj) => {
+        for (var i = 0; i < obj.tags.length; i++) {
+          if (obj.tags[i] === e.target.value) {
             return obj;
           }
         }
       });
-      console.log(tag_data)
+      console.log(tag_data);
       setTag(tag_data);
     }
     //console.log(data.filter(obj=>obj.Tag=='temp'))
-    }
+  }
   function onChangeHandler() {
     setFlag(false);
     const value = Search;
@@ -158,9 +141,8 @@ function Search() {
       .split(" ")
       .filter((word) => word.length > 0);
     let scoreArray = [];
-    
-    if(typeof SearchResults !== 'undefined')
-    {
+
+    if (typeof SearchResults !== "undefined") {
       data1.forEach((object) => {
         let score = 0;
         let nameArray = object.name
@@ -176,7 +158,6 @@ function Search() {
       });
     }
 
-    
     if (scoreArray.length) {
       scoreArray.sort((a, b) => b[0] - a[0]);
       let tempSearchResults = [];
@@ -218,15 +199,15 @@ function Search() {
         <div className="m-1 rounded-full px-2 leading-loose outline-none  block">
           Topics-
         </div>
-         {displayalltags}
-        
+        {displayalltags}
       </div>
 
       {/* content */}
 
       <div className="masonry before:box-inherit after:box-inherit w-full px-2">
-        {flag && typeof tag !=="undefined"? tag.map((objetc) => cardDisplay(objetc)) : listToDisplay}
-        
+        {flag && typeof tag !== "undefined"
+          ? tag.map((objetc) => cardDisplay(objetc))
+          : listToDisplay}
       </div>
     </div>
   );
