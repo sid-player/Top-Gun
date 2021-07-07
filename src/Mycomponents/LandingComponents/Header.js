@@ -47,7 +47,7 @@ function Header() {
             <ul className="list-reset lg:flex justify-end flex-1 items-center">
               <li className="font-bold mr-3">
                 <Link
-                  to="/About"
+                  to="/about"
                   onClick={() => {
                     setSidebar(!sidebar);
                   }}
@@ -63,7 +63,7 @@ function Header() {
               </li>
               <li className="font-bold mr-3">
                 <Link
-                  to="/Team"
+                  to="/team"
                   onClick={() => {
                     setSidebar(!sidebar);
                   }}
@@ -79,7 +79,7 @@ function Header() {
               </li>
               <li className="font-bold mr-3">
                 <Link
-                  to="/Bookmarks"
+                  to="/bookmarks"
                   onClick={() => {
                     setSidebar(!sidebar);
                   }}
@@ -95,7 +95,7 @@ function Header() {
               </li>
               <li className="mr-3">
                 <Link
-                  to="/Login"
+                  to="/login"
                   onClick={() => {
                     setSidebar(!sidebar);
                   }}
@@ -111,7 +111,7 @@ function Header() {
               </li>
               <li className="mr-3 hidden">
                 <Link
-                  to="/Signup"
+                  to="/signup"
                   onClick={() => {
                     setSidebar(!sidebar);
                   }}
