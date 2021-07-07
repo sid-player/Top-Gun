@@ -6,20 +6,20 @@ import { Link } from "react-router-dom";
 export default function Hero() {
   return (
     <div className="bg-gray-100">
-      <div className="py-24">
+      <div className="py-20">
         <div className="flex flex-wrap flex-col md:flex-row items-center justify-center bg-gray-100 p-6">
           <div className="flex flex-col items-center md:items-start justify-center flex-wrap w-full md:w-1/2">
             <div>
               <h1
-                className="text-3xl font-bold tracking-widest"
+                className="text-xl tracking-widest"
                 style={{ letterSpacing: "5px" }}
               >
-                TOPGUN VC
+                TOPGUN.VC
               </h1>
             </div>
             <div
-              className="anim-container block items-center justify-center md:justify-start text-gray-700 text-center md:text-left"
-              style={{ letterSpacing: "2px" }}
+              className="anim-container block items-center justify-center md:justify-start text-gray-700 text-center md:text-left font-bold"
+              style={{ letterSpacing: "1px" }}
             >
               <span>
                 We see what the VC's don't

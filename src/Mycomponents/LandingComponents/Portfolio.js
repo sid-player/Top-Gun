@@ -13,14 +13,14 @@ const Portfolio = () => {
       <div className="bg-gray-100 p-6 h-screen sm:h-screen flex items-center justify-center">
         <div className="">
           <div className="mt-10 md:mt-20 ">
-            <h1 className="w-full my-2 text-3xl font-medium leading-tight text-center text-gray-800">
+            <h1 className="w-full my-2 text-4xl font-medium text-center text-gray-900">
               Our Partners
             </h1>
-            <div className="w-full mb-4">
-              <div className="h-1 mx-auto gradient w-40 md:w-64 opacity-50 my-0 py-0 rounded-t"></div>
+            <div className="w-full mb-8">
+              <div className="h-1 mx-auto bg-gray-900 w-40 md:w-64 my-0 py-0 rounded-t"></div>
             </div>
             <section className="bg-white py-3  md:py-6 h-full  shadow-lg rounded-lg">
-              <div className="container  mx-auto flex flex-wrap pt-4 pb-12">
+              <div className="container  mx-auto flex flex-wrap py-4">
                 <div className="w-full   md:w-1/3 p-0 flex flex-col flex-grow flex-shrink">
                   <div className="flex-1 bg-white overflow-hidden mb-12">
                     <div className="mt-16">
