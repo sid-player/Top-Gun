@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Loading from "../Loader/Loading"
 
 function Search() {
   const [Search, setSearch] = useState("");
@@ -10,20 +11,26 @@ function Search() {
   const [listToDisplay, setListToDisplay] = useState(null);
   const [tag, setTag] = useState();
   const [flag, setFlag] = useState(false);
+  const [isloading, setisloading] = useState(false);
+
 
   const url = "https://topgun-test1.herokuapp.com/api/bookmarks/?format=json";
   const url2 = "https://topgun-test1.herokuapp.com/api/tags/?format=json";
 
   const getDataFromApi = async () => {
+    setisloading(true)
     await axios.get(url).then((res) => {
       setdata(res.data);
+      setisloading(false);
       // console.log(res.data);
       setSearchResults(res.data);
     });
   };
   const getTagsFromApi = async () => {
+    setisloading(true)
     axios.get(url2).then((res) => {
       setshowalltags(res.data);
+      setisloading(false);
       // console.log(res.data);
     });
   };
@@ -178,7 +185,7 @@ function Search() {
       <div className=" border-2 border-gray-200 shadow-sm md:shadow-md w-4/5 md:w-2/3 relative  bg-gray-100 rounded-lg flex">
         {/* <SearchIcon> */}
         <input
-          className="w-full rounded-full bg-gray-100 p-2  h-12  placeholder-gray-900"
+          className=" placeho w-full rounded-full bg-gray-100 p-2  h-12  placeholder-gray-900"
           type="text"
           placeholder="Type and press enter to search..."
           onChange={exactSearch}
@@ -196,24 +203,40 @@ function Search() {
           Search
         </button>
       </div>
-
-      <div className="my-3 flex flex-wrap -m-1 w-3/4 md:w-2/3">
-        <div className="m-1 rounded-full px-2 leading-loose outline-none  block">
-          Topics-
+      {
+        isloading?"":(
+          <div className="my-3 flex flex-wrap -m-1 w-3/4 md:w-2/3">
+          <div className="m-1 text-xl block rounded-full px-2 leading-loose outline-none ">
+            Topics-
+          </div>
+         <div className="">
+           {displayalltags}
+         </div>
+        
+  
+         
         </div>
-        {displayalltags}
-      </div>
+        )
+      }
+     
 
       {/* content */}
+      
+      {
+        isloading?<Loading/>:(
 
-      <div className="masonry before:box-inherit after:box-inherit w-full px-2">
-        {/* {flag && typeof tag !== "undefined"
-          ? tag.map((objetc) => cardDisplay(objetc))
-          : listToDisplay} */}
-        {tag ? tag.map((objetc) => cardDisplay(objetc)) : listToDisplay}
-        {/* {console.log(typeof tag)} */}
-        {/* {Object.keys(tag).length === 0 ? <span>Empty</span> : ""} */}
-      </div>
+          <div className="masonry before:box-inherit after:box-inherit w-full px-2">
+        
+          {
+            isloading?<Loading/>:tag ? tag.map((objetc) => cardDisplay(objetc)) : listToDisplay
+          }
+          
+        </div>
+
+        )
+      }
+      
+
     </div>
   );
 }
