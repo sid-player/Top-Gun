@@ -12,7 +12,7 @@ const Portfolio = () => {
     <>
       <div className="bg-gray-100 p-6 flex items-center justify-center">
         <div className="">
-          <div className="mt-10 md:mt-20 ">
+          <div className="my-10 md:mt-20 ">
             <h1 className="w-full my-2 text-4xl font-medium text-center text-gray-900">
               Our Partners
             </h1>

@@ -87,7 +87,7 @@ function Signup() {
                     type="text"
                     autoComplete="email"
                     required
-                    className="appearance-none relative block w-full py-1 md:px-3 md:py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm  mb-3 md:mb-4 bg-gray-50"
+                    className="p-2 appearance-none relative block w-full md:px-3 md:py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm  mb-3 md:mb-4 bg-gray-50"
                     placeholder="Enter Username"
                     value={username}
                     onChange={(event) => setUsername(event.target.value)}
@@ -105,7 +105,7 @@ function Signup() {
                     type="email"
                     autoComplete="current-password"
                     required
-                    className="appearance-none e relative block w-full  py-1 md:px-3 md:py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm mb-3 md:mb-4 bg-gray-50"
+                    className="p-2 appearance-none e relative block w-full md:px-3 md:py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm mb-3 md:mb-4 bg-gray-50"
                     placeholder="me@example.com"
                     value={email}
                     onChange={(event) => setEmail(event.target.value)}
@@ -122,7 +122,7 @@ function Signup() {
                     type="password"
                     autoComplete="current-password"
                     required
-                    className="appearance-none  relative block w-full  py-1 md:px-3 md:py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm mb-3 md:mb-4 bg-gray-50"
+                    className="appearance-none  relative block w-full  p-2 md:px-3 md:py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm mb-3 md:mb-4 bg-gray-50"
                     placeholder=""
                     value={password1}
                     onChange={(event) => setPassword1(event.target.value)}
@@ -141,7 +141,7 @@ function Signup() {
                     type="password"
                     autoComplete="current-password"
                     required
-                    className="appearance-none relative block w-full  py-1 md:px-3 md:py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm mb-3 md:mb-4 bg-gray-50"
+                    className="appearance-none relative block w-full  p-2 md:px-3 md:py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm mb-3 md:mb-4 bg-gray-50"
                     placeholder=""
                     value={password2}
                     onChange={(event) => setPassword2(event.target.value)}
