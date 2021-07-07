@@ -12,9 +12,13 @@ function LandingContainer() {
     <>
       <div className="overflow-hidden">
         <Header />
-        <Hero />
+        <Fade>
+          <Hero />
+        </Fade>
         <Fade>
           <Team />
+        </Fade>
+        <Fade>
           <Portfolio />
         </Fade>
         <Signup />
