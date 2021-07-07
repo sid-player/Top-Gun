@@ -10,24 +10,23 @@ import Loading from "./Container/LoadingScreen";
 import Bookmark from "./Container/BookmarksContainer";
 import Portfolio from "./Container/PortfolioContainer";
 import Team from "./Container/TeamContainer";
-import {DataProvider} from './ContextApi'
+import { DataProvider } from "./ContextApi";
 
 export default function App() {
   return (
     <DataProvider>
-     <Router>
-      <Switch>
-        <Route exact path="/" component={Landing} />
-        <Route exact path="/About" component={About} />
-        <Route exact path="/Login" component={Login} />
-        <Route exact path="/Signup" component={Signup} />
-        <Route exact path="/Loading" component={Loading} />
-        <Route exact path="/Bookmarks" component={Bookmark} />
-        <Route exact path="/Portfolio" component={Portfolio} />
-        <Route exact path="/Team" component={Team} />
-      </Switch>
-    </Router>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Landing} />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/signup" component={Signup} />
+          <Route exact path="/loading" component={Loading} />
+          <Route exact path="/bookmarks" component={Bookmark} />
+          <Route exact path="/portfolio" component={Portfolio} />
+          <Route exact path="/team" component={Team} />
+        </Switch>
+      </Router>
     </DataProvider>
-    
   );
 }
