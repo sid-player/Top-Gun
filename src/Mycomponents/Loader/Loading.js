@@ -35,10 +35,10 @@ const LoaderComp = () => {
               <div className=" text-base relative -top-1">😎</div>
             </div>
             <div>
-              <div className=" text-base relative top-1">❤</div>
+              <div className=" text-base relative top-3">❤</div>
             </div>
             <div>
-              <div className=" text-base relative top-3">💪</div>
+              <div className=" text-base relative top-5">💪</div>
             </div>
           </div>
         </span>

@@ -31,7 +31,7 @@ export default function Hero() {
                     <div>❤</div>
                   </div>
                   <div>
-                    <div>💪</div>
+                    <div className=" relative top-2">💪</div>
                   </div>
                 </div>
               </span>

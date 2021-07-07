@@ -14,7 +14,7 @@ function SignupContainer(props) {
         return (
         <>
         <Header/>
-        <div className=" mt-20"></div>
+        <div className=" mt-12"></div>
         <Signup/>
         </>
         )
