@@ -27,10 +27,10 @@ function Search() {
     });
   };
   const getTagsFromApi = async () => {
-    setisloading(true)
+    
     axios.get(url2).then((res) => {
       setshowalltags(res.data);
-      setisloading(false);
+      
       // console.log(res.data);
     });
   };
