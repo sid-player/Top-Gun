@@ -7,33 +7,37 @@ function Search() {
   const [SearchResults, setSearchResults] = useState();
   const [showalltags, setshowalltags] = useState();
   const [displayalltags, setdisplayalltags] = useState();
+  const [listToDisplay, setListToDisplay] = useState(null);
+  const [tag, setTag] = useState();
+  const [flag, setFlag] = useState(false);
 
   const url = "https://topgun-test1.herokuapp.com/api/bookmarks/?format=json";
-  console.log(url);
+  const url2 = "https://topgun-test1.herokuapp.com/api/tags/?format=json";
+
   useEffect(() => {
     axios.get(url).then((res) => {
       setdata(res.data);
-      console.log(res.da);
+      // console.log(res.data);
       setSearchResults(res.data);
     });
   }, []);
 
-  const url2 = "https://topgun-test1.herokuapp.com/api/tags/?format=json";
-  console.log(url2);
   useEffect(() => {
     axios.get(url2).then((res) => {
       setshowalltags(res.data);
-      console.log(res.data);
+      // console.log(res.data);
     });
   }, []);
+
+  console.log(data1);
 
   useEffect(() => {
     if (typeof showalltags !== "undefined") {
       setdisplayalltags(
-        showalltags.map((obj, index) => (
+        showalltags.map((obj) => (
           <button
             className="m-1 bg-gray-200 hover:bg-gray-300 rounded-full px-2 font-bold text-sm leading-loose cursor-pointer outline-none"
-            key={index}
+            key={obj.id}
             onClick={tagShow}
             value={obj.tags}
           >
@@ -56,12 +60,8 @@ function Search() {
     return items;
   }
 
-  const [listToDisplay, setListToDisplay] = useState(null);
-  const [tag, setTag] = useState();
-  const [flag, setFlag] = useState(false);
-
   useEffect(() => {
-    console.log("render");
+    // console.log("render");
 
     if (typeof SearchResults === "undefined") {
     } else {
@@ -78,11 +78,13 @@ function Search() {
 
   function cardDisplay(object) {
     return (
-      <div className="break-inside p-6 my-4 transition hover:shadow-lg border-2 border-gray-300 rounded-lg bg-gray-50">
+      <div
+        key={object.id}
+        className="break-inside p-6 my-4 transition hover:shadow-lg border-2 border-gray-300 rounded-lg bg-gray-50"
+      >
         <div
           className=" mt-4 justify-center overflow-hidden transform transition hover:scale-105 hover:mb-2 
                  break-words p-6 md:p-8 my-1  "
-          key={object.id}
         >
           {/* for dummy image */}
           {object.image.length !== 0 ? (
@@ -113,18 +115,23 @@ function Search() {
   function tagShow(e) {
     e.preventDefault();
     setFlag(true);
-    console.log("Clicked");
-    console.log(data1.length);
+    // console.log("Clicked");
+    console.log(typeof data1);
+    // console.log("Length of data:", Object.keys(data1).length);
+    // console.log("target value:", e.target.value);
     if (typeof data1 !== "undefined") {
       const tag_data = data1.filter((obj) => {
-        for (var i = 0; i < obj.tags.length; i++) {
-          if (obj.tags[i] === e.target.value) {
-            return obj;
-          }
+        if (obj.tags.includes(e.target.value)) {
+          return obj;
         }
+        // for (var i = 0; i < obj.tags.length; i++) {
+        //   if (obj.tags[i] === e.target.value) {
+        //     return obj;
+        //   }
+        // }
       });
-      console.log(tag_data);
       setTag(tag_data);
+      // console.log(tag_data);
     }
     //console.log(data.filter(obj=>obj.Tag=='temp'))
   }
@@ -205,9 +212,12 @@ function Search() {
       {/* content */}
 
       <div className="masonry before:box-inherit after:box-inherit w-full px-2">
-        {flag && typeof tag !== "undefined"
+        {/* {flag && typeof tag !== "undefined"
           ? tag.map((objetc) => cardDisplay(objetc))
-          : listToDisplay}
+          : listToDisplay} */}
+        {tag ? tag.map((objetc) => cardDisplay(objetc)) : listToDisplay}
+        {/* {console.log(typeof tag)} */}
+        {/* {Object.keys(tag).length === 0 ? <span>Empty</span> : ""} */}
       </div>
     </div>
   );
