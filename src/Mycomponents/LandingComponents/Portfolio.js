@@ -10,7 +10,7 @@ import logo6 from "./img/Logo6.png";
 const Portfolio = () => {
   return (
     <>
-      <div className="bg-gray-100 p-6 h-screen sm:h-screen flex items-center justify-center">
+      <div className="bg-gray-100 p-6 flex items-center justify-center">
         <div className="">
           <div className="mt-10 md:mt-20 ">
             <h1 className="w-full my-2 text-4xl font-medium text-center text-gray-900">

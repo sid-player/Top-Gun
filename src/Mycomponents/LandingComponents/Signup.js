@@ -53,10 +53,10 @@ function Signup() {
   return (
     <>
       <div className="w-screen bg-gradient-to-r from-gray-800 to-gray-900">
-        <div className=" h-2/3 w-screen flex items-center justify-center  px-4 sm:px-6 md:py-10 lg:px-8 xl:py-12 pb-4 md:pb-96">
+        <div className=" w-screen flex items-center justify-center  px-4 sm:px-6 md:py-10 lg:px-8 xl:py-12 pb-4 md:pb-96">
           <div
             className=" w-full max-w-xl space-y-4 bg-gray-100 shadow-lg p-8 md:px-16
-           md:pb-16 md:pt-8 -mt-4 rounded-md"
+           md:pb-16 md:pt-8 mt-4 rounded-md"
           >
             <div>
               <img
