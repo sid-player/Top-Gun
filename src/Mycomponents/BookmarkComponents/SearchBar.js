@@ -90,7 +90,7 @@ function Search() {
     return (
       <div
         key={object.id}
-        className="break-inside p-6 my-4 transition hover:shadow-lg border-2 border-gray-300 rounded-lg bg-gray-50"
+        className="break-inside p-4 my-0 mb-4 mx-1 transition  shadow-md border-2 border-gray-300 rounded-lg bg-gray-50"
       >
         <div
           className=" mt-4 justify-center overflow-hidden transform transition hover:scale-105 hover:mb-2 
@@ -181,7 +181,7 @@ function Search() {
 
   return (
     // search bar
-    <div className="Search my-4 flex flex-col items-center justify-center">
+    <div className="Search my-4 mb-10 overflow-visible  flex flex-col items-center justify-center">
       <div className=" border-2 border-gray-200 shadow-sm md:shadow-md w-4/5 md:w-2/3 relative  bg-gray-100 rounded-lg flex">
         {/* <SearchIcon> */}
         <input
@@ -225,7 +225,7 @@ function Search() {
       {
         isloading?<Loading/>:(
 
-          <div className="masonry before:box-inherit after:box-inherit w-full px-2">
+          <div className="masonry  before:box-inherit after:box-inherit w-full md:px-8">
         
           {
             isloading?<Loading/>:tag ? tag.map((objetc) => cardDisplay(objetc)) : listToDisplay

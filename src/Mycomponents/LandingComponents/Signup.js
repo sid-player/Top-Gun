@@ -64,7 +64,7 @@ function Signup() {
       <div className="w-screen bg-gray-500">
         <div
           className=" h-2/3 w-screen flex items-center justify-center  px-4 sm:px-6 md:py-10 lg:px-8 xl:py-12 
-           bg-gray-50 pb-96"
+           bg-gray-50 pb-4 md:pb-96"
          
         >
           <div className=" w-full max-w-xl space-y-4 bg-gray-50 shadow-lg   p-8 md:px-16

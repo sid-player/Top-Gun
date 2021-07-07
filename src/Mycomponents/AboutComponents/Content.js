@@ -2,8 +2,8 @@ import React from "react";
 
 function Content() {
   return (
-    <div className="mt-12 md:mt-16 md:pt-4 flex flex-col items-center h-screen bg-gray-100 ">
-      <h1 className="w-full mt-10 text-3xl md:text-5xl font-bold leading-tight text-center text-gray-800">
+    <div className="mt-12 md:mt-16 md:pt-4 flex flex-col items-center h-full bg-gray-100 ">
+      <h1 className="w-full mt-6 text-3xl md:text-5xl font-bold leading-tight text-center text-gray-800">
         About Us
       </h1>
       <div
