@@ -14,22 +14,25 @@ function Search() {
   const url = "https://topgun-test1.herokuapp.com/api/bookmarks/?format=json";
   const url2 = "https://topgun-test1.herokuapp.com/api/tags/?format=json";
 
-  useEffect(() => {
-    axios.get(url).then((res) => {
+  const getDataFromApi = async () => {
+    await axios.get(url).then((res) => {
       setdata(res.data);
       // console.log(res.data);
       setSearchResults(res.data);
     });
-  }, []);
-
-  useEffect(() => {
+  };
+  const getTagsFromApi = async () => {
     axios.get(url2).then((res) => {
       setshowalltags(res.data);
       // console.log(res.data);
     });
+  };
+  useEffect(() => {
+    getDataFromApi();
+    getTagsFromApi();
   }, []);
 
-  console.log(data1);
+  console.log("data1", data1);
 
   useEffect(() => {
     if (typeof showalltags !== "undefined") {
@@ -46,7 +49,7 @@ function Search() {
         ))
       );
     }
-  }, [showalltags]);
+  }, [data1]);
 
   function fun(array) {
     var items = [];
@@ -115,26 +118,18 @@ function Search() {
   function tagShow(e) {
     e.preventDefault();
     setFlag(true);
-    // console.log("Clicked");
-    console.log(typeof data1);
-    // console.log("Length of data:", Object.keys(data1).length);
-    // console.log("target value:", e.target.value);
+
+    console.log("Data1 type=", typeof data1);
     if (typeof data1 !== "undefined") {
       const tag_data = data1.filter((obj) => {
         if (obj.tags.includes(e.target.value)) {
           return obj;
         }
-        // for (var i = 0; i < obj.tags.length; i++) {
-        //   if (obj.tags[i] === e.target.value) {
-        //     return obj;
-        //   }
-        // }
       });
       setTag(tag_data);
-      // console.log(tag_data);
     }
-    //console.log(data.filter(obj=>obj.Tag=='temp'))
   }
+
   function onChangeHandler() {
     setFlag(false);
     const value = Search;
