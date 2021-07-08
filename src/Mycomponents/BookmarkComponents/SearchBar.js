@@ -90,7 +90,7 @@ function Search() {
     return (
       <div
         key={object.id}
-        className="break-inside p-4 my-0 mb-4 mx-4 transition  shadow-md border-2 border-gray-300 rounded-lg bg-gray-50"
+        className="break-inside p-4 my-0 mb-4 mx-4 md:mx-1 transition  shadow-md border-2 border-gray-300 rounded-lg bg-gray-50"
       >
         <div
           className=" mt-4 justify-center overflow-hidden transform transition hover:scale-105 hover:mb-2 

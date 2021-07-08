@@ -2,6 +2,7 @@ import React,{useContext} from 'react'
 
 import Header from "../Mycomponents/LandingComponents/Header";
 import Login from "../Mycomponents/LandingComponents/Login";
+import {Redirect} from "react-router-dom";
 
 import {DataContext} from "../ContextApi"
 
@@ -18,6 +19,8 @@ function LoginContainer() {
             </>
         )
     }
+    return <Redirect to="/"/>
+
    
    
 }

@@ -114,7 +114,7 @@ function Login() {
               </div>
               <div>
                 <button type="submit" className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-500 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300" >
-                  <h1>{parameters[0].accessToken}</h1>
+                  {/* <h1>{parameters[0].accessToken}</h1> */}
                   Login
                 </button>
               </div>
