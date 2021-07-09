@@ -53,11 +53,11 @@ function Content() {
           <div className="border-b-4 mx-12 rounded-xl border-gray-700 w-12"></div>
 
           <div className=" px-12  md:text-l " style={{ lineHeight: "1.8em" }}>
-            <p className="p-2 text-left">
+            <p className="py-2 text-left">
               TopGun.VC builds entrepreneur’s faith in their vision and nurtures
               them with direction for the long war ahead.
             </p>
-            <p className="p-2 text-left">
+            <p className="py-2 text-left">
               We believe companies are an outcome of the vision, character and
               determination of their founders. We believe billion-dollar
               companies can be built in any market, in any geography over the
@@ -66,13 +66,13 @@ function Content() {
               there, and there are few joys other than vicariously winning
               against odds.
             </p>
-            <p className="p-2 text-left">
+            <p className="py-2 text-left">
               We are founders ourselves and work part-time to help as many
               entrepreneurs as possible on their mission forward. We love equity
               and make sure we are participating for the long game ahead. If you
               would like to work with us, let us know.
             </p>
-            <div className="mt-4 text-left outline p-2">
+            <div className="mt-4 text-left outline py-2">
               Thanks
               <p className="font-bold underline text-left">Dharamveer &amp; Parth</p>
             </div>

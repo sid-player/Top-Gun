@@ -52,7 +52,7 @@ function Signup() {
 
   return (
     <>
-      <div className="w-screen bg-gradient-to-r from-gray-800 to-gray-900">
+      <div className="w-screen bg-gray-50">
         <div className=" w-screen flex items-center justify-center  px-4 sm:px-6 md:py-10 lg:px-8 xl:py-12 pb-4 md:pb-96">
           <div
             className=" w-full max-w-xl space-y-4 bg-gray-100 shadow-lg p-8 md:px-16
