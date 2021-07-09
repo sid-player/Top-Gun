@@ -45,7 +45,7 @@ function Search() {
       setdisplayalltags(
         showalltags.map((obj) => (
           <button
-            className="m-1 bg-gray-700 text-gray-100 hover:bg-gray-300 rounded-full px-2 font-bold text-sm leading-loose cursor-pointer outline-none"
+            className="m-1 bg-white text-gray-100 hover:bg-gray-200 rounded-full px-2 font-bold text-sm leading-loose cursor-pointer outline-none text-gray-800"
             key={obj.id}
             onClick={tagShow}
             value={obj.tags}
@@ -61,7 +61,7 @@ function Search() {
     var items = [];
     for (var i = 0; i < array.length; i++) {
       items.push(
-        <span className="capitalize inline-block w-auto border-2 rounded-xl text-center bg-gray-200 text-gray-900 mt-2 mr-2 px-2 text-sm">
+        <span className="capitalize inline-block w-auto border-2 rounded-xl text-center bg-white text-gray-900 mt-2 mr-2 px-2 text-xs">
           {array[i]}
         </span>
       );
@@ -90,8 +90,7 @@ function Search() {
       <div className="break-inside">
         <a href={object.url} target="_blank" rel="noreferrer">
           <div
-            className=" mt-0 mb-4 px-2 md:mx-0 justify-center overflow-hidden transform transition hover:scale-105 bg-white
-                 break-words p-6 md:p-0 my-0 border-2 border-gray-300 rounded-2xl"
+            className="mt-0 mb-4 mx-2 md:mx-0 justify-center overflow-hidden transform transition hover:scale-bg-white break-words md:p-0 my-0 border-2 border-gray-300 rounded-2xl"
             key={object.id}
           >
             {/* for dummy image */}
@@ -110,8 +109,10 @@ function Search() {
             )}
 
             <div className="text-center bg-white text-lg mt-0 ">
-              <div className=" p-4 text-base  googlefont1 shadow-md">{object.name}</div>
-              <div className="flex bg-gray-100  flex-col items-center justify-center px-0 py-0">
+              <div className=" p-4 text-base googlefont1 shadow-md">
+                {object.name}
+              </div>
+              <div className="flex bg-gray-600 flex-col items-center justify-center px-2 py-0 w-full">
                 <div className=" pb-2">{fun(object.tags)}</div>
               </div>
             </div>
@@ -231,7 +232,7 @@ function Search() {
 
         {console.log(showtagsection)}
         {showtagsection ? (
-          <div className=" z-20 absolute top-32  p-5 px-4 m-4 h-3/4 transition duration-300 ease-in-out rounded-lg border-2 border-gray-200 w-1/4 bg-gray-50 bg-opacity-70 overflow-y-scroll">
+          <div className=" z-20 absolute top-32  p-5 px-4 m-4 h-3/4 transition duration-300 ease-in-out rounded-lg border-2 border-gray-200 w-1/4 bg-gray-700 overflow-y-scroll shadow-lg">
             {isloading ? (
               <Loading />
             ) : (
@@ -241,8 +242,6 @@ function Search() {
         ) : (
           ""
         )}
-
-        
       </div>
 
       {/* <div className=" border-2 mt-2 border-gray-200 shadow-sm md:shadow-md w-80 md:w-2/3   bg-gray-100 rounded-lg flex">
@@ -288,7 +287,7 @@ function Search() {
       {isloading ? (
         <Loading />
       ) : (
-        <div className=" z-0 absolute top-36 masonry coloumn overflow-visible before:box-inherit after:box-inherit w-full mt-4   md:px-4">
+        <div className=" z-0 absolute top-36 masonry coloumn overflow-visible before:box-inherit after:box-inherit w-full mt-4 md:px-4">
           {isloading ? (
             <Loading />
           ) : tag ? (
