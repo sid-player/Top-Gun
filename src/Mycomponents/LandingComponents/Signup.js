@@ -158,6 +158,9 @@ function Signup() {
                 </button>
               </div>
             </form>
+            <div className="text-black">
+            Already registered? <a href="/login" className="text-blue-600 underline">Login</a>
+      </div>
           </div>
         </div>
       </div>

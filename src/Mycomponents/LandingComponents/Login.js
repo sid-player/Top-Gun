@@ -4,11 +4,13 @@ import axios from "axios";
 
 
 
+
 function Login() {
  
   const [parameters,setparameters]= useContext(DataContext);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  
 
 
   
@@ -51,12 +53,9 @@ function Login() {
          
         
         ])
-      })
-       
-
-    
+      })     
   }
-  
+
   return (
     <>
       <div className="container w-screen">
@@ -119,10 +118,16 @@ function Login() {
                 </button>
               </div>
             </form>
+            <div className="text-black">
+        Create a new account? <a href="/signup" className="text-blue-600 underline">SignUp</a>
+      </div>
           </div>
         </div>
       </div>
-    </>
+      
+      </>
+
+    
   );
 }
 
