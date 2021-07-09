@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Loading from "../Loader/Loading"
+import Loading from "../Loader/Loading";
 
 function Search() {
   const [Search, setSearch] = useState("");
@@ -12,14 +12,13 @@ function Search() {
   const [tag, setTag] = useState();
   const [flag, setFlag] = useState(false);
   const [isloading, setisloading] = useState(false);
-  const [showtagsection, setshowtagsection] = useState(false)
-
+  const [showtagsection, setshowtagsection] = useState(false);
 
   const url = "https://topgun-test1.herokuapp.com/api/bookmarks/?format=json";
   const url2 = "https://topgun-test1.herokuapp.com/api/tags/?format=json";
 
   const getDataFromApi = async () => {
-    setisloading(true)
+    setisloading(true);
     await axios.get(url).then((res) => {
       setdata(res.data);
       setisloading(false);
@@ -28,7 +27,6 @@ function Search() {
     });
   };
   const getTagsFromApi = async () => {
-
     axios.get(url2).then((res) => {
       setshowalltags(res.data);
 
@@ -47,7 +45,7 @@ function Search() {
       setdisplayalltags(
         showalltags.map((obj) => (
           <button
-            className="m-1 bg-gray-200 hover:bg-gray-300 rounded-full px-2 font-bold text-sm leading-loose cursor-pointer outline-none"
+            className="m-1 bg-gray-700 text-gray-100 hover:bg-gray-300 rounded-full px-2 font-bold text-sm leading-loose cursor-pointer outline-none"
             key={obj.id}
             onClick={tagShow}
             value={obj.tags}
@@ -89,17 +87,20 @@ function Search() {
 
   function cardDisplay(object) {
     return (
-
-
       <div className="break-inside">
         <a href={object.url} target="_blank" rel="noreferrer">
           <div
-            className=" mt-0 mb-4 mx-1 justify-center overflow-hidden transform transition hover:scale-105 bg-white
-                 break-words p-6 md:p-0 my-0 border-2 border-gray-300 rounded-md"  key={object.id}
+            className=" mt-0 mb-4 px-2 md:mx-0 justify-center overflow-hidden transform transition hover:scale-105 bg-white
+                 break-words p-6 md:p-0 my-0 border-2 border-gray-300 rounded-2xl"
+            key={object.id}
           >
             {/* for dummy image */}
             {object.image.length !== 0 ? (
-              <img src={object.image} alt="" className="object-contain mx-auto w-full" />
+              <img
+                src={object.image}
+                alt=""
+                className="object-contain mx-auto w-full h-full"
+              />
             ) : (
               <img
                 src="https://via.placeholder.com/150?text=TopGun.vc"
@@ -109,34 +110,23 @@ function Search() {
             )}
 
             <div className="text-center bg-white text-lg mt-0 ">
-              <div className=" p-4 shadow-md">
-                {object.name}
-              </div>
+              <div className=" p-4 text-base  googlefont1 shadow-md">{object.name}</div>
               <div className="flex bg-gray-100  flex-col items-center justify-center px-0 py-0">
-
-
-                <div className=" pb-2">
-                  {fun(object.tags)}
-                </div>
-
+                <div className=" pb-2">{fun(object.tags)}</div>
               </div>
-
-
-
             </div>
           </div>
         </a>
       </div>
-
     );
   }
 
   function tagShow(e) {
-    setshowtagsection(false) 
-    
+    setshowtagsection(false);
+
     e.preventDefault();
     setFlag(true);
-   
+
     console.log("Data1 type=", typeof data1);
     if (typeof data1 !== "undefined") {
       const tag_data = data1.filter((obj) => {
@@ -192,32 +182,34 @@ function Search() {
 
   return (
     // search bar
-    <div className="Search -mt-1 mb-10 overflow-visible  flex flex-col  items-center justify-center">
-
-      <div className="w-screen">
+    <div className="Search z-30 -mt-1 mb-10 overflow-visible  flex flex-col  items-center justify-center">
+      <div className="w-screen transition duration-300 ease-in-out">
         <button
           className="m-1 ml-4 px-4 mt-4  bg-gray-200 hover:bg-gray-300 rounded-full  font-bold text-xl leading-loose cursor-pointer outline-noneflex float-left items-end"
-          onClick={()=>setshowtagsection(!showtagsection)}
+          onClick={() => setshowtagsection(!showtagsection)}
         >
-        
-        <div>
-          
-        </div>
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
-</svg> 
+          <div></div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5 inline-block"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
+            />
+          </svg>
           Topics
-          
-          
         </button>
-        
 
         <div>
           <div className=" border-2 mt-2 border-gray-200 shadow-sm md:shadow-md w-80 md:w-4/5   bg-gray-100 rounded-full flex">
-
-            
             <input
-              className=" placeho w-full rounded-full bg-gray-100 p-2  h-12  placeholder-gray-900"
+              className=" w-full rounded-full bg-gray-100 p-2  h-12  placeholder-gray-900"
               type="text"
               placeholder="Type and press enter to search..."
               onChange={exactSearch}
@@ -235,36 +227,23 @@ function Search() {
               Search
             </button>
           </div>
-          
         </div>
+
         {console.log(showtagsection)}
-        {
-          showtagsection?(
-            <div className=" z-0 bg-gray-100 p-5 px-10 m-4 h-48 w-full overflow-scroll">
-            {
-            isloading?<Loading/>:(
-              
-             <div className=" ">
-               {displayalltags}
-             </div>
-            
-      
-             
-            
-            )
-          }
-            </div>
-          ):""
-        }
-        
+        {showtagsection ? (
+          <div className=" z-20 absolute top-32  p-5 px-4 m-4 h-3/4 transition duration-300 ease-in-out rounded-lg border-2 border-gray-200 w-1/4 bg-gray-50 bg-opacity-70 overflow-y-scroll">
+            {isloading ? (
+              <Loading />
+            ) : (
+              <div className=" z-20">{displayalltags}</div>
+            )}
+          </div>
+        ) : (
+          ""
+        )}
 
         
-
       </div>
-
-
-
-
 
       {/* <div className=" border-2 mt-2 border-gray-200 shadow-sm md:shadow-md w-80 md:w-2/3   bg-gray-100 rounded-lg flex">
       Hello
@@ -304,24 +283,21 @@ function Search() {
         )
       } */}
 
-
       {/* content */}
 
-      {
-        isloading?<Loading/>:(
-
-          <div className="masonry coloumn overflow-visible before:box-inherit after:box-inherit w-full mt-4   md:px-4">
-        
-          {
-            isloading?<Loading/>:tag ? tag.map((objetc) => cardDisplay(objetc)) : listToDisplay
-          }
-          
+      {isloading ? (
+        <Loading />
+      ) : (
+        <div className=" z-0 absolute top-36 masonry coloumn overflow-visible before:box-inherit after:box-inherit w-full mt-4   md:px-4">
+          {isloading ? (
+            <Loading />
+          ) : tag ? (
+            tag.map((objetc) => cardDisplay(objetc))
+          ) : (
+            listToDisplay
+          )}
         </div>
-
-        )
-      }
-
-
+      )}
     </div>
   );
 }

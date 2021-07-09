@@ -131,7 +131,7 @@ function Header() {
         <hr className="opacity-30 my-0 py-0" />
       </nav>
 
-      {parameters[0].error == null ? (
+      {/* {parameters[0].error == null ? (
         " "
       ) : (
         <div className="border-red-800 flex justify-between text-red-900 border-2 m-1 bg-red-400 bg-opacity-90 rounded-md">
@@ -152,7 +152,7 @@ function Header() {
             x
           </button>
         </div>
-      )}
+      )} */}
     </div>
   );
 }
