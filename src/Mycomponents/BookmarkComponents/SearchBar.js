@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect,lazy,Suspense } from "react";
 import axios from "axios";
 import Loading from "../Loader/Loading"
 
@@ -69,7 +69,7 @@ function Search() {
     }
     return items;
   }
-
+const lazyLoading=lazy(()=>import(cardDisplay))
   useEffect(() => {
     // console.log("render");
 
@@ -136,7 +136,18 @@ function Search() {
       setTag(tag_data);
     }
   }
+function scrollEffect(tags){
+  let no_of_tags=Math.min(tags.length,3)
+  cardDisplay(tag.slice(0,no_of_tags))
+  while (true && no_of_tags<tag.length){
+    let temp=no_of_tags+Math.min(3,tag.length-no_of_tags)
+    cardDisplay(tag.slice(no_of_tags,temp))
+    no_of_tags+=temp
 
+  }
+  
+  
+}
   function onChangeHandler() {
     setFlag(false);
     const value = Search;
@@ -178,7 +189,14 @@ function Search() {
       );
     }
   }
-
+  window.onscroll = function(ev) {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      return true}
+    else{
+      return false
+    }
+        // you're at the bottom of the page
+    }
   return (
     // search bar
     <div className="Search my-4 mb-10 overflow-visible  flex flex-col items-center justify-center">
@@ -228,7 +246,7 @@ function Search() {
           <div className="masonry coloumn  before:box-inherit after:box-inherit w-full md:w-4/5 md:px-8">
         
           {
-            isloading?<Loading/>:tag ? tag.map((objetc) => cardDisplay(objetc)) : listToDisplay
+            isloading?<Loading/>:tag ? tag.map((object) => cardDisplay(object)) : listToDisplay
           }
           
         </div>
@@ -236,9 +254,16 @@ function Search() {
         )
       }
       
-
+{   }
     </div>
   );
 }
 
 export default Search;
+
+
+//////////////////   [x,y,z,a,,a,a,,a,,a,a] trigger when react to bottom
+
+
+
+//////// if viewpoint==screenheight:continue
