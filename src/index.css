@@ -12,16 +12,15 @@
       .masonry {
         column-count: 2;
       }
-     
     }
     @media (min-width: 768px) {
       .masonry {
-        column-count: 3;
+        column-count: 4;
       }
     }
     @media (min-width: 1024px) {
       .masonry {
-        column-count: 4;
+        column-count: 5;
       }
     }
     .break-inside {
