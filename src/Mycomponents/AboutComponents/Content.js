@@ -82,7 +82,7 @@ function Content() {
           <div className=" mt-10 md:mt-20 ">
             <section className="bg-white  py-4 h-full ">
               <div className="container  flex flex-wrap pt-4 pb-12 mr-6">
-                <h1 className=" m-auto text-center my-0 text-3xl font-medium text-gray-900 border-b-4 border-gray-600 rounded-sm w-auto inline-block">
+                <h1 className=" m-auto text-center my-0 text-4xl font-medium text-gray-900 border-b-4 border-gray-600 rounded-sm w-auto inline-block">
                   Our Partners
                 </h1>
 

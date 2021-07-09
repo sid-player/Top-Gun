@@ -13,15 +13,12 @@ const Portfolio = () => {
       <div className="bg-gray-100 p-6 flex items-center justify-center">
         <div className="">
           <div className="my-10 md:mt-20 ">
-            <h1 className="w-full my-2 text-4xl font-medium text-center text-gray-900">
-              Our Partners
-            </h1>
-            <div className="w-full mb-8">
-              <div className="h-1 mx-auto bg-gray-900 w-40 md:w-64 my-0 py-0 rounded-t"></div>
-            </div>
-            <section className="bg-white py-3  md:py-6 h-full  shadow-lg rounded-lg">
-              <div className="container  mx-auto flex flex-wrap py-4">
-                <div className="w-full   md:w-1/3 p-0 flex flex-col flex-grow flex-shrink">
+          <h1 className="w-full mt-10 text-3xl md:text-5xl font-bold text-center text-gray-900">
+          Our Partners
+        </h1>
+            <section className="bg-white py-3 mt-10  md:py-6 h-full  shadow-lg rounded-lg">
+              <div className="container mx-auto flex flex-wrap py-4">
+                <div className="w-full  md:w-1/3 p-0 flex flex-col flex-grow flex-shrink">
                   <div className="flex-1 bg-white overflow-hidden mb-12">
                     <div className="mt-16">
                       <a href="https://www.hiration.com/job-search/free-resume-builder/?gclid=Cj0KCQjw8IaGBhCHARIsAGIRRYrUxG0mw9_fhr73O1o0m-AZZWw3P9KDtjBLxB7B8cXIJjPL2M9Tx2kaAuo6EALw_wcB">
