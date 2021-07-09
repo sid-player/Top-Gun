@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 // import ErrorMessage from "./Error";
 import { DataContext } from "../../ContextApi";
 
-function Header() {
+function Header({loggedIn}) {
   const [parameters, setparameters] = useContext(DataContext);
   const [sidebar, setSidebar] = useState(false);
   const showSidebar = () => setSidebar(!sidebar);
@@ -93,6 +93,22 @@ function Header() {
                   </button>
                 </Link>
               </li>
+              {loggedIn ? <li className="mr-3">
+                <Link
+                  to="/login"
+                  onClick={() => {
+                    setSidebar(!sidebar);
+                  }}
+                  className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+                >
+                  <button
+                    id="navAction"
+                    className="lg:mx-0  text-gray-100 hover:text-white hover:bg-gray-500 font-thin rounded-md py-2 px-4  opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-75  ease-in-out  text-lg   bg-gray-700"
+                  >
+                    LOG-IN
+                  </button>
+                </Link>
+              </li>:
               <li className="mr-3">
                 <Link
                   to="/login"
@@ -108,7 +124,7 @@ function Header() {
                     LOG-IN
                   </button>
                 </Link>
-              </li>
+              </li>}
               <li className="mr-3 hidden">
                 <Link
                   to="/signup"

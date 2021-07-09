@@ -36,7 +36,7 @@ function Login() {
       })
       .catch((error) => {
         console.log(error);
-        let data = error.response.data.detail;
+        /*let data = error.response.data.detail;
         setParameters([
           {
             accessToken: null,
@@ -44,7 +44,7 @@ function Login() {
             error: data,
             loading: false,
           },
-        ]);
+        ]);*/
         setLoading(false);
       });
   };

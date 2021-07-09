@@ -1,4 +1,4 @@
-import React,{useContext} from 'react'
+import React,{useContext, useState} from 'react'
 
 import Header from "../Mycomponents/LandingComponents/Header";
 import Login from "../Mycomponents/LandingComponents/Login";
@@ -10,6 +10,7 @@ import {DataContext} from "../ContextApi"
 
 function LoginContainer() {
     const parameters = useContext(DataContext)[0];
+    const [loggedIn, setLoggedIn] = useState(false);
     if(parameters[0].accessToken==null && parameters[0].refreshToken==null)
     {
         return (
@@ -19,10 +20,10 @@ function LoginContainer() {
             </>
         )
     }
-    return <Redirect to="/"/>
-
-   
-   
+    else{
+        setLoggedIn({loggedIn: true})
+        return <Redirect to="/"/>
+    }
 }
 
 
